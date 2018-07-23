@@ -21,8 +21,13 @@
   background: #98a0ff;
   width: 2px;
   height: 2.5vw;
+  top: -1.25vw;
+  transform: translateY(50%);
 
   animation: cursorAnim 0.25s linear 0s infinite normal;
+}
+.TypeEffect.complete .dialog-text::after {
+  animation: completeAnim 0.1s linear 0s 1 normal forwards;
 }
 
 @keyframes cursorAnim {
@@ -37,5 +42,14 @@
   }
   99% {
     opacity: 1;
+  }
+}
+
+@keyframes completeAnim {
+  0% {
+    height: 2.5vw;
+  }
+  100% {
+    height: 0;
   }
 }

@@ -6,9 +6,19 @@ import $ from 'jquery';
 // Adjustable Variables
 var delays = {
   writing: [1, 5], // How quickly you type each letter (milliseconds);
-  waiting: [75, 95], // How long each dialog should wait when typing is complete
+  typedWaiting: [75, 95], // How long each dialog should wait when typing is complete
+  deletedWaiting: [25, 25], // How long each dialog should wait when all letters are deleted
   deleting: [0.5, 4]
 };
+
+/* Speedy - For development
+delays = {
+  writing: [0.1, 0.1], // How quickly you type each letter (milliseconds);
+  typedWaiting: [0.1, 0.1], // How long each dialog should wait when typing is complete
+  deletedWaiting: [0.1, 0.1], // How long each dialog should wait when all letters are deleted
+  deleting: [0.1, 0.1]
+};
+*/
 
 class TypeEffect extends Component {
   constructor(options) {
@@ -61,13 +71,13 @@ class TypeEffect extends Component {
           this.resetTimer();
         } else {
           // Finishing the dialog
-          this.direction = 'waiting';
+          this.direction = 'typedWaiting';
           this.resetTimer();
         }
       }
 
       // Waiting after it's typed out
-    } else if (this.direction === 'waiting') {
+    } else if (this.direction === 'typedWaiting') {
       if (this.timer >= this.delay) {
         this.direction = 'deleting';
       }
@@ -79,8 +89,15 @@ class TypeEffect extends Component {
           this.removeLetter();
           this.resetTimer();
         } else {
-          this.nextDialog();
+          this.direction = 'deletedWaiting';
+          this.resetTimer();
         }
+      }
+
+      // When it's done being deleted
+    } else if (this.direction == 'deletedWaiting') {
+      if (this.timer >= this.delay) {
+        this.setupNextDialog();
       }
     }
 
@@ -110,10 +127,12 @@ class TypeEffect extends Component {
   }
 
   // Going to the next dialog
-  nextDialog() {
+  setupNextDialog() {
     if (this.currentDialog < dialogs.length - 1) {
       this.currentDialog++;
       this.direction = 'writing';
+    } else {
+      this.el.addClass('complete');
     }
   }
 }
