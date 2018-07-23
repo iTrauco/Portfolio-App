@@ -6,8 +6,8 @@ import $ from 'jquery';
 // Adjustable Variables
 var delays = {
   writing: [1, 5], // How quickly you type each letter (milliseconds);
-  waiting: [200, 200], // How long each dialog should wait when typing is complete
-  deleting: [0.5, 1.5]
+  waiting: [75, 95], // How long each dialog should wait when typing is complete
+  deleting: [0.5, 4]
 };
 
 class TypeEffect extends Component {

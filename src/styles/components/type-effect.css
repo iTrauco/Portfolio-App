@@ -1,0 +1,41 @@
+.TypeEffect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.TypeEffect .dialog-text {
+  font-family: Roboto;
+  font-size: 2.5vw;
+  color: #98a0ff;
+}
+
+/* The Cursor */
+.TypeEffect .dialog-text::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  background: #98a0ff;
+  width: 2px;
+  height: 2.5vw;
+
+  animation: cursorAnim 0.25s linear 0s infinite normal;
+}
+
+@keyframes cursorAnim {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+}
