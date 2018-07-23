@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/home.css';
+import $ from 'jquery';
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
           </div>
 
           {/* The Page Description */}
-          <div class="sub-text">Welcome to my creative hub.</div>
+          <div className="sub-text">Welcome to my creative hub.</div>
         </div>
       </div>
     );
