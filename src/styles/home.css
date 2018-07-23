@@ -8,9 +8,11 @@
   font-size: 8vw;
   text-align: center;
   background: -webkit-linear-gradient(45deg, #5a5fff 10%, #ff5a5a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 100px 0px;
+  margin-bottom: 20px;
 }
 .Home .header .title.transition {
   position: absolute;
@@ -22,8 +24,16 @@
   animation-duration: 7s;
   animation-iteration-count: infinite;
   background: -webkit-linear-gradient(225deg, #5a5fff 10%, #ff5a5a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.Home .header .sub-text {
+  font-family: Roboto;
+  font-size: 2vw;
+  color: #7279bd;
+  text-align: center;
 }
 
 /* Animations */

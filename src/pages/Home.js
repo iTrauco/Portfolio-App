@@ -11,6 +11,9 @@ class App extends Component {
             <div className="title">Gage Henderson</div>
             <div className="title transition">Gage Henderson</div>
           </div>
+
+          {/* The Page Description */}
+          <div class="sub-text">Welcome to my creative hub.</div>
         </div>
       </div>
     );
