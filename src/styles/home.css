@@ -1,0 +1,40 @@
+.Home {
+  max-width: 1420px;
+  margin: auto;
+}
+
+.Home .header .title {
+  font-family: Bungee;
+  font-size: 8vw;
+  text-align: center;
+  background: -webkit-linear-gradient(45deg, #5a5fff 10%, #ff5a5a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 100px 0px;
+}
+.Home .header .title.transition {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  animation-name: title-animation;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  background: -webkit-linear-gradient(225deg, #5a5fff 10%, #ff5a5a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+@keyframes title-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

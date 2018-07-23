@@ -1,0 +1,18 @@
+/* Create all of the font-familys! */
+
+@font-face {
+  font-family: Baloo;
+  src: url('../fonts/Baloo-Regular.ttf');
+}
+@font-face {
+  font-family: Bungee;
+  src: url('../fonts/Bungee-Regular.ttf');
+}
+@font-face {
+  font-family: Cutive;
+  src: url('../fonts/CutiveMono-Regular.ttf');
+}
+@font-face {
+  font-family: Patua;
+  src: url('../fonts/PatuaOne-Regular.ttf');
+}
