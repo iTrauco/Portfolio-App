@@ -5,10 +5,10 @@ import $ from 'jquery';
 
 // Adjustable Variables
 var delays = {
-  writing: [1, 5], // How quickly you type each letter (milliseconds);
-  typedWaiting: [75, 95], // How long each dialog should wait when typing is complete
+  writing: [1, 3], // How quickly you type each letter (milliseconds);
+  typedWaiting: [75, 75], // How long each dialog should wait when typing is complete
   deletedWaiting: [25, 25], // How long each dialog should wait when all letters are deleted
-  deleting: [0.5, 4]
+  deleting: [0.5, 3]
 };
 
 /* Speedy - For development
@@ -23,9 +23,11 @@ delays = {
 class TypeEffect extends Component {
   constructor(options) {
     super(options);
-
-    // Initiate the dialog
-    $(document).ready(this.startDialog.bind(this));
+    this.state = { isComplete: false };
+  }
+  // Start the dialog
+  componentDidMount() {
+    this.startDialog();
   }
 
   // Rendering the markup
@@ -57,51 +59,57 @@ class TypeEffect extends Component {
 
   // Updating the dialog typing effect
   updateDialog() {
-    // Run the timer
-    this.timer++;
+    if (!this.state.isComplete) {
+      // Run the timer
+      this.timer++;
 
-    // Typing it out
-    if (this.direction === 'writing') {
-      var dialogLength = dialogs[this.currentDialog].length;
+      // Typing it out
+      if (this.direction === 'writing') {
+        var dialogLength = dialogs[this.currentDialog].length;
 
-      if (this.timer >= this.delay) {
-        if (this.currentLetter < dialogLength) {
-          // Typing more letters
-          this.addLetter();
-          this.resetTimer();
-        } else {
-          // Finishing the dialog
-          this.direction = 'typedWaiting';
-          this.resetTimer();
+        if (this.timer >= this.delay) {
+          if (this.currentLetter < dialogLength) {
+            // Typing more letters
+            this.addLetter();
+            this.resetTimer();
+          } else {
+            // Finishing the dialog
+            this.direction = 'typedWaiting';
+            this.resetTimer();
+          }
+        }
+
+        // Waiting after it's typed out
+      } else if (this.direction === 'typedWaiting') {
+        if (this.timer >= this.delay) {
+          this.direction = 'deleting';
+        }
+
+        // Deleting it
+      } else if (this.direction === 'deleting') {
+        if (this.timer >= this.delay) {
+          if (this.currentLetter > 0) {
+            this.removeLetter();
+            this.resetTimer();
+          } else {
+            this.direction = 'deletedWaiting';
+            this.resetTimer();
+          }
+        }
+
+        // When it's done being deleted
+      } else if (this.direction == 'deletedWaiting') {
+        if (this.timer >= this.delay) {
+          this.setupNextDialog();
         }
       }
 
-      // Waiting after it's typed out
-    } else if (this.direction === 'typedWaiting') {
-      if (this.timer >= this.delay) {
-        this.direction = 'deleting';
-      }
-
-      // Deleting it
-    } else if (this.direction === 'deleting') {
-      if (this.timer >= this.delay) {
-        if (this.currentLetter > 0) {
-          this.removeLetter();
-          this.resetTimer();
-        } else {
-          this.direction = 'deletedWaiting';
-          this.resetTimer();
-        }
-      }
-
-      // When it's done being deleted
-    } else if (this.direction == 'deletedWaiting') {
-      if (this.timer >= this.delay) {
-        this.setupNextDialog();
-      }
+      this.updateLoop = window.requestAnimationFrame(
+        this.updateDialog.bind(this)
+      );
+    } else {
+      window.cancelAnimationFrame(this.updateLoop);
     }
-
-    window.requestAnimationFrame(this.updateDialog.bind(this));
   }
 
   // Add a letter
@@ -133,6 +141,8 @@ class TypeEffect extends Component {
       this.direction = 'writing';
     } else {
       this.el.addClass('complete');
+      this.props.complete();
+      this.setState({ isComplete: true });
     }
   }
 }
