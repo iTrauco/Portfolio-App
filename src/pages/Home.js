@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
+import TypeEffect from '../components/TypeEffect';
 import '../styles/home.css';
-import $ from 'jquery';
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <div className="header">
-          {/* The Page Title */}
-          <div className="title-container">
-            <div className="title">Gage Henderson</div>
-            <div className="title transition">Gage Henderson</div>
-          </div>
-
-          {/* The Page Description */}
-          <div className="sub-text">Welcome to my creative hub.</div>
-        </div>
+        <TypeEffect />
       </div>
     );
   }
 }
 
-export default App;
+export default Home;
