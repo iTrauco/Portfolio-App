@@ -83,8 +83,14 @@ export default class Ball {
     this.el = $("<div class='ball'></div>");
 
     // Calculate random values
-    this.x = GageLib.math.getRandom(0, this.container.width());
-    this.y = GageLib.math.getRandom(0, this.container.height());
+    this.x = GageLib.math.getRandom(
+      this.container.width() * 0.4,
+      this.container.width() * 0.6
+    );
+    this.y = GageLib.math.getRandom(
+      this.container.height() * 0.4,
+      this.container.height() * 0.64
+    );
     this.size = GageLib.math.getRandom(this.ballSize[0], this.ballSize[1]);
 
     // Apply to element

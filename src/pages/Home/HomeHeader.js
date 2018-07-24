@@ -34,8 +34,8 @@ class HomeHeader extends Component {
               Oregon.
               <br />
               <br />
-              I create clean, modern, creative websites and interactive
-              web-experiences.
+              I create clean, modern, creative websites and interactive web
+              experiences.
             </div>
           </div>
         </div>
