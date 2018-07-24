@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import '../../styles/pages/home/about-me.css';
 import photo from '../../assets/images/me.jpg';
+import Clouds from '../../components/Clouds/Clouds';
+import $ from 'jquery';
 
 export default class AboutMe extends Component {
+  componentDidMount() {
+    new Clouds({ el: $('.self-portrait') });
+  }
   render() {
-    console.log(photo);
     return (
       <div className="AboutMe">
         <div className="side left">
