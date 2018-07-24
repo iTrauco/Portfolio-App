@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import '../../styles/pages/home/home-header.css';
 import $ from 'jquery';
+import CanvasBall from '../../components/CanvasBall/CanvasBall';
 
 class HomeHeader extends Component {
   componentDidMount() {
-    console.log('componentDidMount: ' + this.props.isShown);
     if (this.props.isShown) {
       this.triggerAnimations();
     }
+
+    new CanvasBall({
+      canvas: $('.HomeHeader').children('canvas'),
+      container: $('.HomeHeader')
+    });
   }
   componentWillReceiveProps(newProps) {
-    console.log('componentWillReceiveProps: ' + newProps.isShown);
     if (newProps.isShown) {
       this.triggerAnimations();
     }
@@ -18,6 +22,7 @@ class HomeHeader extends Component {
   render() {
     return (
       <div className="HomeHeader">
+        <canvas />
         <div className="side left">
           <div className="title">
             Clean, beautiful websites made with &hearts;{' '}
