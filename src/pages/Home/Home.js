@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TypeEffect from '../../components/TypeEffect';
 import '../../styles/pages/home/home.css';
 import HomeHeader from './HomeHeader';
+import HomeBody from './HomeBody';
 
 class Home extends Component {
   constructor(options) {
@@ -37,7 +38,11 @@ class Home extends Component {
     return (
       <div className="Home">
         {typingIntro}
-        {this.state && <HomeHeader />}
+        {this.state && (
+          <div>
+            <HomeHeader /> <HomeBody />
+          </div>
+        )}
       </div>
     );
   }

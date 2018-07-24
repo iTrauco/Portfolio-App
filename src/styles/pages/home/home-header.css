@@ -1,36 +1,60 @@
-.HomeHeader .title-container {
-  animation-name: intro-animation;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  opacity: 0;
+.HomeHeader {
+  position: relative;
+  height: 750px;
+  width: 100%;
+  background: #f47761;
+  display: flex;
+  z-index: 0;
 }
+
+.HomeHeader .side {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.HomeHeader .divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 1px;
+  height: 90%;
+  background: #f39886;
+}
+
 .HomeHeader .title {
   font-family: Bungee;
-  font-size: 8vw;
-  text-align: center;
-  background: -webkit-linear-gradient(45deg, #5a5fff 10%, #ff5a5a);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 100px 0px;
-  margin-bottom: 20px;
+  font-size: 3.5vw;
+  color: #737cd8;
+  width: 80%;
 }
-.HomeHeader .title.transition {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  animation-name: title-animation;
-  animation-duration: 7s;
-  animation-iteration-count: infinite;
-  background: -webkit-linear-gradient(225deg, #5a5fff 10%, #ff5a5a);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0;
-  animation-delay: 3s;
+
+.HomeHeader .text-container {
+  width: 75%;
+}
+.HomeHeader .header-text {
+  font-family: Patua;
+  font-size: 3vw;
+  color: white;
+  margin-bottom: 15px;
+}
+.HomeHeader .header-text::after {
+  content: '';
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: white;
+  margin-top: 5px;
+}
+.HomeHeader .sub-text {
+  font-family: Roboto;
+  font-size: 1.5vw;
+  color: white;
+  width: 95%;
 }
 
 /* Animations */
