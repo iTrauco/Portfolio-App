@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../styles/pages/home/home-header.css';
-import Ballpit from '../../components/Ballpit/Ballpit';
 import $ from 'jquery';
 
 class HomeHeader extends Component {
@@ -19,7 +18,6 @@ class HomeHeader extends Component {
   render() {
     return (
       <div className="HomeHeader">
-        <Ballpit />
         <div className="side left">
           <div className="title">
             Clean, beautiful websites made with &hearts;{' '}
