@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
 import '../../styles/pages/home/home-header.css';
 import Ballpit from '../../components/Ballpit/Ballpit';
+import $ from 'jquery';
 
 class HomeHeader extends Component {
+  componentDidMount() {
+    console.log('componentDidMount: ' + this.props.isShown);
+    if (this.props.isShown) {
+      this.triggerAnimations();
+    }
+  }
+  componentWillReceiveProps(newProps) {
+    console.log('componentWillReceiveProps: ' + newProps.isShown);
+    if (newProps.isShown) {
+      this.triggerAnimations();
+    }
+  }
   render() {
     return (
       <div className="HomeHeader">
@@ -28,6 +41,11 @@ class HomeHeader extends Component {
         </div>
       </div>
     );
+  }
+
+  // Trigger the intro animations
+  triggerAnimations() {
+    $('.HomeHeader').addClass('anim');
   }
 }
 

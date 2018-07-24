@@ -10,32 +10,20 @@ class Home extends Component {
     this.state = {
       introComplete: false
     };
+    this.checkTypeShow();
   }
 
   // The markup
   render() {
-    var typingIntro;
-    var showPage;
-    if (
-      localStorage.getItem('hasVisited') == 'true' ||
-      this.state.introComplete
-    ) {
-      // Display the page
-      showPage = true;
-    } else {
-      // Don't display the page
-      showPage = false;
-    }
-
     return (
       <div className="Home">
         <TypeEffect
           complete={this.completeTypeEffect.bind(this)}
-          shouldShow={!showPage}
+          shouldShow={!this.state.showPage}
         />
-        {showPage && (
+        {this.state.showPage && (
           <div>
-            <HomeHeader /> <HomeBody />
+            <HomeHeader isShown={this.state.showPage} /> <HomeBody />
           </div>
         )}
       </div>
@@ -45,10 +33,24 @@ class Home extends Component {
   // Trigger the completion of the intro typing effect
   completeTypeEffect() {
     // Change the state.
-    this.setState({ introComplete: true });
+    this.setState({ introComplete: true, showPage: true });
 
     // Remember this user has visited before
     localStorage.setItem('hasVisited', 'true');
+  }
+
+  // Check if the typing intro should be shown or not
+  checkTypeShow() {
+    if (
+      localStorage.getItem('hasVisited') == 'true' ||
+      this.state.introComplete
+    ) {
+      // Display the page
+      this.state.showPage = true;
+    } else {
+      // Don't display the page
+      this.state.showPage = false;
+    }
   }
 }
 
