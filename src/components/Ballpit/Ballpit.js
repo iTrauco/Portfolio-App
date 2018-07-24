@@ -8,7 +8,7 @@ import Ball from './Ball';
 var ballSize = [0.5, 3]; // ball size in vw
 var friction = 0.999;
 var ballCount = [50, 60];
-var mouseForce = 10;
+var mouseForce = 15;
 
 class Ballpit extends Component {
   constructor(options) {
