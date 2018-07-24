@@ -13,7 +13,7 @@ export default class AboutMe extends Component {
 
     // Calculate when the intro animations should be triggered
     this.el = $('.AboutMe');
-    this.scrollTrigger = this.el.offset().top + this.el.height() * 0.2;
+    this.scrollTrigger = this.el.offset().top + this.el.height() * 0.4;
 
     // Immediately check if they should be triggered
     this.checkScroll(this.props.scrollY);
