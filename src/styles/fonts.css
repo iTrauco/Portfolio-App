@@ -17,6 +17,18 @@
   src: url('../fonts/PatuaOne-Regular.ttf');
 }
 @font-face {
-  font-family: Roboto;
+  font-family: Roboto-Mono;
   src: url('../fonts/RobotoMono-Regular.ttf');
+}
+@font-face {
+  font-family: Roboto-Thin;
+  src: url('../fonts/Roboto-Thin.ttf');
+}
+@font-face {
+  font-family: Roboto;
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: Fredoka;
+  src: url('../fonts/FredokaOne-Regular.ttf');
 }

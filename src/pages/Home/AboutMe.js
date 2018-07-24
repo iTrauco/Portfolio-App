@@ -15,6 +15,10 @@ export default class AboutMe extends Component {
         </div>
         <div className="side right">
           <div className="header-text">Who am I?</div>
+          <div className="sub-text">
+            My love for coding began at 11 when I got my first hand-me-down
+            macbook.
+          </div>
         </div>
       </div>
     );

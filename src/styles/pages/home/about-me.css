@@ -24,10 +24,21 @@
   background-repeat: no-repeat;
 }
 .AboutMe .header-text {
-  font-family: Bungee;
+  font-family: Fredoka;
   font-size: 4vw;
   color: white;
-  text-decoration: underline;
   align-self: flex-start;
   margin: 10px 0px;
+  text-shadow: 1px 1px #f47761, 2px 2px #f47761, 3px 3px #f47761,
+    4px 4px #f47761, 5px 5px #f47761, 6px 6px #f47761, 7px 7px #f47761,
+    8px 8px #f47761, 9px 9px #f47761, 10px 10px #f47761, 11px 11px #f47761,
+    12px 12px #f47761, 13px 13px #f47761, 13px 13px #f47761;
+  margin-bottom: 25px;
+}
+.AboutMe .sub-text {
+  font-family: Roboto-Thin;
+  font-size: 1.8vw;
+  color: white;
+  width: 90%;
+  align-self: flex-start;
 }
