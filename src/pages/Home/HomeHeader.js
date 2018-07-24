@@ -5,8 +5,10 @@ class HomeHeader extends Component {
   render() {
     return (
       <div className="HomeHeader">
-        <div className="title">Gage Henderson</div>
-        <div className="title transition">Gage Henderson</div>
+        <div className="title-container">
+          <div className="title">Gage Henderson</div>
+          <div className="title transition">Gage Henderson</div>
+        </div>
       </div>
     );
   }
