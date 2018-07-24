@@ -9,9 +9,12 @@ class Home extends Component {
   constructor(options) {
     super(options);
     this.state = {
-      introComplete: false
+      introComplete: false,
+      scrollY: 0
     };
     this.checkTypeShow();
+
+    $(window).on('scroll', this.trackScroll.bind(this));
   }
 
   // The markup
@@ -25,7 +28,7 @@ class Home extends Component {
         {this.state.showPage && (
           <div>
             <HomeHeader isShown={this.state.showPage} />
-            <HomeBody />
+            <HomeBody scrollY={this.state.scrollY} />
           </div>
         )}
       </div>
@@ -59,6 +62,11 @@ class Home extends Component {
       // Don't display the page
       this.state.showPage = false;
     }
+  }
+
+  // Tracking the user's scroll position
+  trackScroll() {
+    this.setState({ scrollY: $(window).scrollTop() });
   }
 }
 

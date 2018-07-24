@@ -5,8 +5,21 @@ import Clouds from '../../components/Clouds/Clouds';
 import $ from 'jquery';
 
 export default class AboutMe extends Component {
+  constructor(options) {
+    super(options);
+  }
   componentDidMount() {
     new Clouds({ el: $('.self-portrait') });
+
+    // Calculate when the intro animations should be triggered
+    this.el = $('.AboutMe');
+    this.scrollTrigger = this.el.offset().top + this.el.height() * 0.2;
+
+    // Immediately check if they should be triggered
+    this.checkScroll(this.props.scrollY);
+  }
+  componentWillReceiveProps(newProps) {
+    this.checkScroll(newProps.scrollY);
   }
   render() {
     return (
@@ -31,5 +44,13 @@ export default class AboutMe extends Component {
         </div>
       </div>
     );
+  }
+
+  // Check the scroll position and see if the user is scrolled over
+  // the component
+  checkScroll(scrollY) {
+    if (scrollY + window.innerHeight > this.scrollTrigger) {
+      this.el.addClass('anim');
+    }
   }
 }
