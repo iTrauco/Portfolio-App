@@ -20,25 +20,20 @@ class Home extends Component {
       localStorage.getItem('hasVisited') == 'true' ||
       this.state.introComplete
     ) {
-      // Don't display typing intro
-      typingIntro = <div />;
-
       // Display the page
       showPage = true;
     } else {
-      // Display the typing intro
-      typingIntro = (
-        <TypeEffect complete={this.completeTypeEffect.bind(this)} />
-      );
-
       // Don't display the page
       showPage = false;
     }
 
     return (
       <div className="Home">
-        {typingIntro}
-        {this.state && (
+        <TypeEffect
+          complete={this.completeTypeEffect.bind(this)}
+          shouldShow={!showPage}
+        />
+        {showPage && (
           <div>
             <HomeHeader /> <HomeBody />
           </div>

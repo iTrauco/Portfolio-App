@@ -27,7 +27,11 @@ class TypeEffect extends Component {
   }
   // Start the dialog
   componentDidMount() {
-    this.startDialog();
+    if (this.props.shouldShow) {
+      this.startDialog();
+    } else {
+      $('.TypeEffect').remove();
+    }
   }
 
   // Rendering the markup

@@ -1,10 +1,12 @@
 .TypeEffect {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 100;
 }
 
 .TypeEffect .dialog-text {
