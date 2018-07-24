@@ -21,7 +21,12 @@ export default class AboutMe extends Component {
           <div className="header-text">Who am I?</div>
           <div className="sub-text">
             My love for coding began at 11 when I got my first hand-me-down
-            macbook.
+            macbook. I started out making games in my free time, which
+            eventually led to me getting a full-time job as a web developer.<br />
+            <br />
+            Since then, I have become familiar with an array of techonology:
+            HTML, CSS, SASS, Javascript, Jquery, ReactJS, NodeJS, ThreeJS, SQL,
+            and more.
           </div>
         </div>
       </div>
