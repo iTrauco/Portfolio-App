@@ -2,3 +2,18 @@
   max-width: 1550px;
   margin: auto;
 }
+
+.Home.anim {
+  animation: fadeIn 1s ease 0.5s 1 normal forwards;
+  opacity: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

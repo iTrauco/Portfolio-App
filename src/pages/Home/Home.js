@@ -3,6 +3,7 @@ import TypeEffect from '../../components/TypeEffect';
 import '../../styles/pages/home/home.css';
 import HomeHeader from './HomeHeader';
 import HomeBody from './HomeBody';
+import $ from 'jquery';
 
 class Home extends Component {
   constructor(options) {
@@ -36,6 +37,9 @@ class Home extends Component {
     // Change the state.
     this.setState({ introComplete: true, showPage: true });
 
+    // Fade in
+    $('.Home').addClass('anim');
+
     // Remember this user has visited before
     localStorage.setItem('hasVisited', 'true');
   }
@@ -48,6 +52,9 @@ class Home extends Component {
     ) {
       // Display the page
       this.state.showPage = true;
+
+      // Fade in
+      $('.Home').addClass('anim');
     } else {
       // Don't display the page
       this.state.showPage = false;
