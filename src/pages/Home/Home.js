@@ -23,7 +23,8 @@ class Home extends Component {
         />
         {this.state.showPage && (
           <div>
-            <HomeHeader isShown={this.state.showPage} /> <HomeBody />
+            <HomeHeader isShown={this.state.showPage} />
+            <HomeBody />
           </div>
         )}
       </div>
