@@ -13,10 +13,8 @@ class MyWork extends Component {
             <div className="project" key={index}>
               {project.thumbnail()}
               <div className="overlay">
-                <div className="text-container">
-                  {project.title()}
-                  {project.description()}
-                </div>
+                {project.title()}
+                {project.description()}
               </div>
             </div>
           ))}

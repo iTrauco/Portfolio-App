@@ -31,6 +31,7 @@ export default class DroneRacing {
     return (
       <div
         className="project-thumbnail"
+        data-depth="0.6"
         style={{ backgroundImage: `url("${thumbnail}")` }}
       />
     );
