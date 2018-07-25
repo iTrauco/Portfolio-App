@@ -1,77 +1,8 @@
 .MyWork {
-  position: relative;
-  background: #f47761;
+  background: white;
 }
 
-.MyWork .title {
-  font-family: Fredoka;
-  font-size: 3.6vw;
-  color: white;
-  text-shadow: 1px 1px #7d79e4, 2px 2px #7d79e4, 3px 3px #7d79e4,
-    4px 4px #7d79e4, 5px 5px #7d79e4;
-  border-bottom: dashed 3px white;
-  padding-top: 25px;
-  padding-bottom: 15px;
-  width: 90%;
-  margin: auto;
-  margin-bottom: 10px;
-}
-
-.MyWork .project-container {
-  position: relative;
-  margin: auto;
-  padding-bottom: 50px;
-  background: #ee745f;
-  padding-top: 20px;
-  min-height: 500px;
-}
-
-.MyWork .project-container .project {
-  position: relative;
-  display: flex;
-}
-
-.MyWork .project-container .project .side {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.MyWork .project-container .project .side.right {
-  padding-left: 25px;
-}
-
-.MyWork .project-container .project .divider {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 1px;
-  height: 90%;
-  background: #7d79e4;
-  opacity: 0.5;
-}
-
-.MyWork .project-container .project .project-thumbnail {
-  width: 80%;
+.MyWork img {
+  width: 40%;
   height: auto;
-  margin: 20px 0px;
-}
-
-.MyWork .project-container .project .project-title {
-  font-family: Bungee;
-  font-size: 3.5vw;
-  color: white;
-  text-decoration: underline;
-  margin-bottom: 10px;
-  width: 90%;
-}
-
-.MyWork .project-container .project .project-description {
-  font-family: Roboto;
-  color: white;
-  width: 90%;
 }
