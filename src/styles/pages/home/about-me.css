@@ -1,31 +1,31 @@
 .AboutMe {
   position: relative;
   background: #7d79e4;
-  display: flex;
-  height: 600px;
+  width: 100%;
   z-index: 5;
+  padding-bottom: 75px;
 }
 
 .AboutMe .side {
   position: relative;
-  width: 50%;
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.AboutMe .side.left {
+.AboutMe .side.top {
   /* Animation default */
   transform: scale(0);
 }
 
 .AboutMe .self-portrait {
   position: relative;
+  margin-top: 75px;
   display: block;
-  width: 25vw;
-  height: 25vw;
+  width: 15vw;
+  height: 15vw;
   border-radius: 50%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -36,13 +36,14 @@
   font-family: Fredoka;
   font-size: 4vw;
   color: white;
-  align-self: flex-start;
   margin: 10px 0px;
   text-shadow: 1px 1px #f47761, 2px 2px #f47761, 3px 3px #f47761,
     4px 4px #f47761, 5px 5px #f47761, 6px 6px #f47761, 7px 7px #f47761,
     8px 8px #f47761, 9px 9px #f47761, 10px 10px #f47761, 11px 11px #f47761,
     12px 12px #f47761, 13px 13px #f47761, 13px 13px #f47761;
   margin-bottom: 25px;
+  text-align: center;
+  margin-top: 50px;
 
   /* Animatino Default */
   opacity: 0;
@@ -51,15 +52,16 @@
   font-family: Roboto-Thin;
   font-size: 1.8vw;
   color: white;
-  width: 90%;
-  align-self: flex-start;
+  width: 60%;
+  text-align: center;
+  margin-top: 5px;
 
   /* Animation Default */
   opacity: 0;
 }
 
 /* Animations */
-.AboutMe.anim .side.left {
+.AboutMe.anim .side.top {
   animation-name: popAnim;
   animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-duration: 0.5s;
@@ -76,7 +78,7 @@
 
 .AboutMe.anim .header-text,
 .AboutMe.anim .sub-text {
-  animation-name: fromRight;
+  animation-name: fromDown;
   animation-duration: 0.7s;
   animation-delay: 0.25s;
   animation-fill-mode: forwards;
@@ -84,9 +86,9 @@
 .AboutMe.anim .sub-text {
   animation-delay: 0.5s;
 }
-@keyframes fromRight {
+@keyframes fromDown {
   0% {
-    transform: translate(25px);
+    transform: translateY(25px);
     opacity: 0;
   }
   100% {
