@@ -40,6 +40,9 @@ class HomeHeader extends Component {
               <br />
               I create clean, modern, creative websites and interactive web
               experiences.
+              <br />
+              <br />
+              I practice a <b>simple</b>, <b>precise</b> design philosophy.
             </div>
           </div>
         </div>
