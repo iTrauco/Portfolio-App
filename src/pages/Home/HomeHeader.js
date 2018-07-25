@@ -29,6 +29,7 @@ class HomeHeader extends Component {
           </div>
         </div>
         <div className="divider" />
+        <div className="instructions">(Move Your Mouse)</div>
         <div className="side right">
           <div className="text-container">
             <div className="header-text">Hi, I'm Gage</div>
