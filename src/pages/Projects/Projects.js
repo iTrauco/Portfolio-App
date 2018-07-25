@@ -1,5 +1,5 @@
-import IntelXeon from './IntelXeon';
+import DroneRacing from './DroneRacing';
 
-var projectList = [new IntelXeon()];
+var projectList = [new DroneRacing()];
 
 export default projectList;

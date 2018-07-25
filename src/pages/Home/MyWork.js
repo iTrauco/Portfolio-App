@@ -8,16 +8,18 @@ class MyWork extends Component {
     return (
       <div className="MyWork">
         {/* The title of the section */}
-        <div className="title-container">
-          <div className="title">What I've Worked on</div>
-        </div>
+        <div className="title">My Work</div>
 
         {/* The list of all projects */}
         <div className="project-container">
           {projectList.map((project, index) => (
-            <div className="project">
-              {project.title()}
-              {project.body()}
+            <div className="project" key={index}>
+              <div className="side left">{project.thumbnail()}</div>
+              <div className="divider" />
+              <div className="side right">
+                {project.title()}
+                {project.description()}
+              </div>
             </div>
           ))}
         </div>

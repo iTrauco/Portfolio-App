@@ -1,6 +1,7 @@
 import React from 'react';
+import thumbnail from '../../assets/images/projects/drone-racing-1.png';
 
-export default class IntelXeon {
+export default class DroneRacing {
   title() {
     return <div className="project-title">Intel Xeon Racing</div>;
   }
@@ -23,6 +24,17 @@ export default class IntelXeon {
         Quis autem vel eum iure reprehenderit qui in ea voluptate velit ess quam
         nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
         voluptas nulla pariatur?"
+      </div>
+    );
+  }
+  thumbnail() {
+    return <img src={thumbnail} className="project-thumbnail" />;
+  }
+  description() {
+    return (
+      <div className="project-description">
+        Intel Drone Racing was the first project I ever worked on
+        professionally.
       </div>
     );
   }
