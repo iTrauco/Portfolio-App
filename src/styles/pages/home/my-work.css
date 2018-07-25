@@ -1,0 +1,20 @@
+.MyWork {
+  position: relative;
+  background: #f47761;
+}
+
+.MyWork .title-container {
+  position: relative;
+  padding: 50px 50px;
+}
+.MyWork .title-container .title {
+  font-family: Fredoka;
+  font-size: 3vw;
+  color: white;
+  display: inline;
+  text-shadow: 1px 1px #7d79e4, 2px 2px #7d79e4, 3px 3px #7d79e4,
+    4px 4px #7d79e4, 5px 5px #7d79e4;
+  border-bottom: dashed 5px white;
+  padding-bottom: 10px;
+  padding-right: 20px;
+}
