@@ -141,7 +141,7 @@
   animation-name: fromBottom;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  animation-delay: 6.3s;
 }
 @keyframes fromBottom {
   0% {
