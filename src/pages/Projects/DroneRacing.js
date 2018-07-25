@@ -28,7 +28,12 @@ export default class DroneRacing {
     );
   }
   thumbnail() {
-    return <img src={thumbnail} className="project-thumbnail" />;
+    return (
+      <div
+        className="project-thumbnail"
+        style={{ backgroundImage: `url("${thumbnail}")` }}
+      />
+    );
   }
   description() {
     return (
