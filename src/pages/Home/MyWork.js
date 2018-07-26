@@ -26,11 +26,13 @@ export default class MyWork extends Component {
       });
     }
 
+    /* Disabled for now... not sure how I feel about it.
     new CanvasWavy({
       canvas: $('.canvas-2'),
       width: container.width(),
       height: container.height()
     });
+    */
   }
 
   componentWillReceiveProps(newProps) {
