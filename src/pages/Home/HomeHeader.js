@@ -11,7 +11,7 @@ class HomeHeader extends Component {
     }
 
     new CanvasBall({
-      canvas: $('.HomeHeader').children('canvas'),
+      canvas: $('.HomeHeader').children('.canvas-1'),
       container: $('.HomeHeader')
     });
   }

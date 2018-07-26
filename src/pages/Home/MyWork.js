@@ -3,6 +3,7 @@ import '../../styles/pages/home/my-work.css';
 import MtSvgLines from 'react-mt-svg-lines';
 import $ from 'jquery';
 import CanvasWavy from '../../components/CanvasWavy';
+import CanvasDrip from '../../components/CanvasDrip';
 
 var svgStrokeWidth = 10;
 var svgDrawDelay = 100;
@@ -33,6 +34,11 @@ export default class MyWork extends Component {
       height: container.height()
     });
     */
+    new CanvasDrip({
+      canvas: $('.canvas-2'),
+      width: container.outerWidth(),
+      height: container.outerHeight()
+    });
   }
 
   componentWillReceiveProps(newProps) {
