@@ -1,0 +1,35 @@
+.MyWork {
+  position: relative;
+  width: 100%;
+  background: #f47761;
+  padding-top: 100px;
+  min-height: 500px; /* For Testing */
+}
+
+.MyWork .section {
+  display: flex;
+  flex-direction: column;
+}
+
+.MyWork .section .section-title,
+.MyWork .section .section-sub-text {
+  margin: 10px 150px;
+}
+.MyWork .section .section-title {
+  align-self: flex-start;
+  font-family: Fredoka;
+  color: white;
+  font-size: 35px;
+  text-shadow: 1px 1px #737cd8, 2px 2px #737cd8, 3px 3px #737cd8,
+    4px 4px #737cd8, 5px 5px #737cd8, 6px 6px #737cd8, 7px 7px #737cd8;
+  margin-bottom: 50px;
+}
+.MyWork .section .section-sub-text {
+  font-family: roboto-thin;
+  align-self: flex-end;
+  font-size: 21px;
+  color: white;
+  text-align: left;
+  width: 60%;
+  margin-right: 75px;
+}
