@@ -5,6 +5,10 @@
   padding-top: 100px;
   min-height: 500px; /* For Testing */
   z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 canvas {
   position: absolute;
@@ -14,13 +18,7 @@ canvas {
   opacity: 0.5;
 }
 
-.MyWork .section {
-  margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.MyWork .section .section-title {
+.MyWork .section-title {
   font-family: Concert;
   color: white;
   font-size: 70px;
@@ -34,7 +32,7 @@ canvas {
   /* Animation Default */
   opacity: 0;
 }
-.MyWork .section .section-sub-text {
+.MyWork .section-sub-text {
   font-family: roboto-thin;
   font-size: 21px;
   color: white;
@@ -55,13 +53,13 @@ canvas {
   /* Animation Default */
   opacity: 0;
 }
-.MyWork .section .svg {
+.MyWork .svg {
   width: 80px;
   margin: 0px 50px;
 }
 
 /* Animations */
-.MyWork .section .section-title.anim {
+.MyWork .section-title.anim {
   animation-name: fromBelow;
   animation-duration: 0.5s;
   animation-delay: 0.2s;
@@ -77,14 +75,14 @@ canvas {
   }
 }
 
-.MyWork .section .section-sub-text.anim {
+.MyWork .section-sub-text.anim {
   animation-name: fromBelow;
   animation-duration: 0.5s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 
-.MyWork .section .svg-container.anim {
+.MyWork .svg-container.anim {
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-delay: 0.5s;
