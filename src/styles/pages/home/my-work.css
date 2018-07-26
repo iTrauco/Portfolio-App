@@ -9,36 +9,84 @@
 .MyWork .section {
   margin-bottom: 100px;
   display: flex;
-}
-
-.MyWork .section .side.left {
-  width: 50%;
-  height: 100%;
-  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-}
-.MyWork .section .side.right {
-  width: 65%;
-  display: flex;
-  justify-content: flex-end;
+  align-items: center;
 }
 .MyWork .section .section-title {
-  font-family: Fredoka;
+  font-family: Concert;
   color: white;
-  font-size: 37px;
+  font-size: 70px;
   text-shadow: 1px 1px #737cd8, 2px 2px #737cd8, 3px 3px #737cd8,
-    4px 4px #737cd8, 5px 5px #737cd8, 6px 6px #737cd8, 7px 7px #737cd8;
-  margin-bottom: 25px;
-  margin-left: 100px;
+    4px 4px #737cd8, 5px 5px #737cd8, 6px 6px #737cd8, 7px 7px #737cd8,
+    8px 8px #737cd8, 9px 9px #737cd8, 10px 10px #737cd8, 11px 11px #737cd8,
+    12px 12px #737cd8, 13px 13px #737cd8, 14px 14px #737cd8, 15px 15px #737cd8,
+    16px 16px #737cd8, 17px 17px #737cd8, 18px 18px #737cd8;
+  margin-bottom: 35px;
+
+  /* Animation Default */
+  opacity: 0;
 }
 .MyWork .section .section-sub-text {
   font-family: roboto-thin;
   font-size: 21px;
   color: white;
-  text-align: left;
-  width: 90%;
+  text-align: center;
+  width: 80%;
 
-  margin-top: 50px;
-  margin-right: 50px;
+  /* Animation Default */
+  opacity: 0;
+}
+
+.MyWork .svg-container {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  top: 50%;
+  margin-bottom: 35px;
+
+  /* Animation Default */
+  opacity: 0;
+}
+.MyWork .section .svg {
+  width: 80px;
+  margin: 0px 50px;
+}
+
+/* Animations */
+.MyWork .section .section-title.anim {
+  animation-name: fromBelow;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+}
+@keyframes fromBelow {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.MyWork .section .section-sub-text.anim {
+  animation-name: fromBelow;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.MyWork .section .svg-container.anim {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
