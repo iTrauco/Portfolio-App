@@ -120,7 +120,7 @@ export default class MyWork extends Component {
             </MtSvgLines>
             <MtSvgLines
               animate={svgDrawDelay + 1500}
-              duration={5000}
+              duration={2500}
               className="svg on-scroll"
               stagger={50}
             >
@@ -225,10 +225,11 @@ export default class MyWork extends Component {
             </MtSvgLines>
           </div>
           <div className="section-sub-text on-scroll">
-            I practice a minimal, precise design philosophy. I believe focused
-            efforts on the fewest, most vital elements undoubtedly reaps better
-            results. The best user-experiences provide a smooth, coherent
-            use-path centered around the users direct interaction, never
+            I practice a <b>minimal</b>, <b>precise</b> design philosophy. I
+            believe <b>focused</b> efforts on the <b>fewest</b>, most{' '}
+            <b>vital elements</b> undoubtedly reaps better results. The best
+            user-experiences provide a <b>smooth</b>, <b>coherent</b> use-path
+            centered around the users <b>direct interaction</b>, <b>never</b>{' '}
             replacing utility with appearance.
           </div>
         </div>

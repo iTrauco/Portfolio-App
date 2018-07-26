@@ -1,7 +1,7 @@
 .MyWork {
   position: relative;
   width: 100%;
-  background: #f47761;
+  background: #6177f4;
   padding-top: 100px;
   min-height: 500px; /* For Testing */
   z-index: 1;
@@ -24,11 +24,11 @@ canvas {
   font-family: Concert;
   color: white;
   font-size: 70px;
-  text-shadow: 1px 1px #737cd8, 2px 2px #737cd8, 3px 3px #737cd8,
-    4px 4px #737cd8, 5px 5px #737cd8, 6px 6px #737cd8, 7px 7px #737cd8,
-    8px 8px #737cd8, 9px 9px #737cd8, 10px 10px #737cd8, 11px 11px #737cd8,
-    12px 12px #737cd8, 13px 13px #737cd8, 14px 14px #737cd8, 15px 15px #737cd8,
-    16px 16px #737cd8, 17px 17px #737cd8, 18px 18px #737cd8;
+  text-shadow: 1px 1px #f47761, 2px 2px #f47761, 3px 3px #f47761,
+    4px 4px #f47761, 5px 5px #f47761, 6px 6px #f47761, 7px 7px #f47761,
+    8px 8px #f47761, 9px 9px #f47761, 10px 10px #f47761, 11px 11px #f47761,
+    12px 12px #f47761, 13px 13px #f47761, 14px 14px #f47761, 15px 15px #f47761,
+    16px 16px #f47761, 17px 17px #f47761, 18px 18px #f47761;
   margin-bottom: 35px;
 
   /* Animation Default */
