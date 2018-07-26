@@ -8,6 +8,7 @@
     "parallax-js": "^3.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-mt-svg-lines": "^0.8.4",
     "react-scripts": "1.1.4"
   },
   "scripts": {
