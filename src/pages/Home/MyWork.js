@@ -34,11 +34,13 @@ export default class MyWork extends Component {
       height: container.height()
     });
     */
+    /*
     new CanvasDrip({
       canvas: $('.canvas-2'),
       width: container.outerWidth(),
       height: container.outerHeight()
     });
+    */
   }
 
   componentWillReceiveProps(newProps) {
