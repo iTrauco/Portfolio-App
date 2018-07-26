@@ -31,6 +31,11 @@
   color: #737cd8;
   width: 80%;
 }
+.HomeHeader .title img {
+  width: 3vw;
+  position: relative;
+  top: 0.2vw;
+}
 
 .HomeHeader .text-container {
   width: 75%;

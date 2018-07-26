@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../styles/pages/home/home-header.css';
 import $ from 'jquery';
 import CanvasBall from '../../components/CanvasBall/CanvasBall';
+import heart from '../../assets/icons/heart.svg';
 
 class HomeHeader extends Component {
   componentDidMount() {
@@ -25,7 +26,7 @@ class HomeHeader extends Component {
         <canvas />
         <div className="side left">
           <div className="title">
-            Clean, beautiful websites made with &hearts;{' '}
+            Clean, beautiful websites made with <img src={heart} />
           </div>
         </div>
         <div className="divider" />
