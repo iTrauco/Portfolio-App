@@ -3,7 +3,7 @@ import GageLib from 'gages-library';
 import '../../styles/components/canvas-ball.css';
 
 var size = [1, 10];
-var amount = 50;
+var amount = 100;
 var mouseForce = 2;
 var friction = 0.75;
 var bounce = 2.5;
@@ -22,7 +22,10 @@ export default class CanvasBall {
     this.balls = [];
     this.generateBalls();
 
-    this.mouse = { x: this.c.canvas.width / 2, y: this.c.canvas.height / 2 };
+    this.mouse = {
+      x: this.c.canvas.width / 2,
+      y: this.c.canvas.height / 2
+    };
     $(window).on('mousemove', this.trackMouse.bind(this));
 
     this.update();
