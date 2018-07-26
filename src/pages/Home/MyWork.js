@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../styles/pages/home/my-work.css';
 import MtSvgLines from 'react-mt-svg-lines';
 import $ from 'jquery';
+import CanvasWavy from '../../components/CanvasWavy';
 
 var svgStrokeWidth = 10;
 var svgDrawDelay = 100;
@@ -13,6 +14,7 @@ export default class MyWork extends Component {
 
   componentDidMount() {
     var onScrollEls = $('.on-scroll');
+    var container = $('.MyWork');
 
     // Setup the on-scroll triggers
     this.scrollEls = [];
@@ -23,6 +25,12 @@ export default class MyWork extends Component {
         el: el
       });
     }
+
+    new CanvasWavy({
+      canvas: $('.canvas-2'),
+      width: container.width(),
+      height: container.height()
+    });
   }
 
   componentWillReceiveProps(newProps) {
@@ -43,6 +51,7 @@ export default class MyWork extends Component {
   render() {
     return (
       <div className="MyWork">
+        <canvas className="canvas-2" />
         {/* Design Philosophy */}
         <div className="section">
           <div className="section-title on-scroll">Design Philosophy</div>

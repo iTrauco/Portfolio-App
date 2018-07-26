@@ -23,7 +23,7 @@ class HomeHeader extends Component {
   render() {
     return (
       <div className="HomeHeader">
-        <canvas />
+        <canvas className="canvas-1" />
         <div className="side left">
           <div className="title">
             Clean, beautiful websites made with <img src={heart} />

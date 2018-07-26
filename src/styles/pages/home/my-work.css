@@ -4,6 +4,14 @@
   background: #f47761;
   padding-top: 100px;
   min-height: 500px; /* For Testing */
+  z-index: 1;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 .MyWork .section {
