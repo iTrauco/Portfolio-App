@@ -3,11 +3,11 @@ import GageLib from 'gages-library';
 import '../../styles/components/canvas-ball.css';
 
 var size = [1, 10];
-var launchSpeed = [-5, 5];
-var amount = 10;
+var amount = 50;
 var mouseForce = 2;
-var friction = 0.9;
+var friction = 0.75;
 var bounce = 2.5;
+var minForce = 0.1;
 
 export default class CanvasBall {
   constructor(options) {
@@ -22,7 +22,7 @@ export default class CanvasBall {
     this.balls = [];
     this.generateBalls();
 
-    this.mouse = { x: 0, y: 0 };
+    this.mouse = { x: this.c.canvas.width / 2, y: this.c.canvas.height / 2 };
     $(window).on('mousemove', this.trackMouse.bind(this));
 
     this.update();
@@ -58,8 +58,19 @@ export default class CanvasBall {
         GageLib.math.getDistance(ball.x, ball.y, this.mouse.x, this.mouse.y) /
         2;
       var force = mouseForce / (distance * 0.1);
-      ball.xvel += Math.cos(angle + Math.PI) * force;
-      ball.yvel += Math.sin(angle + Math.PI) * force;
+
+      // Apply force from mouse if it is large enough
+      if (force >= minForce) {
+        ball.xvel += Math.cos(angle + Math.PI) * force;
+        ball.yvel += Math.sin(angle + Math.PI) * force;
+        ball.dir = angle + Math.PI;
+      } else if (ball.dir) {
+        ball.dir += ball.moveDir;
+        ball.xvel += Math.cos(ball.dir) * force;
+        ball.yvel += Math.sin(ball.dir) * force;
+      }
+
+      // Apply Friction
       ball.xvel *= friction;
       ball.yvel *= friction;
     }
@@ -69,12 +80,21 @@ export default class CanvasBall {
   generateBalls() {
     var count = amount;
     for (var i = 0; i < count; i++) {
+      var centerX = this.container.width() / 2;
+      var centerY = this.container.height() / 2;
+      var angle = GageLib.math.getRandom(0, Math.PI * 2 * 1000) / 1000;
+      var distance = GageLib.math.getRandom(5, 15);
+
+      var x = centerX + Math.cos(angle) * distance;
+      var y = centerY + Math.sin(angle) * distance;
+
       this.balls.push({
-        x: this.container.width() / 2,
-        y: this.container.height() / 2,
+        x: x,
+        y: y,
         size: GageLib.math.getRandom(size[0], size[1]),
-        xvel: GageLib.math.getRandom(launchSpeed[0], launchSpeed[1]),
-        yvel: GageLib.math.getRandom(launchSpeed[0], launchSpeed[1])
+        xvel: 0,
+        yvel: 0,
+        moveDir: GageLib.math.getRandom(-0.002 * 10000, 0.002 * 10000) / 10000
       });
     }
   }
