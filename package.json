@@ -9,7 +9,8 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-mt-svg-lines": "^0.8.4",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "vis": "^4.21.0"
   },
   "scripts": {
     "start": "react-scripts start",
