@@ -240,6 +240,12 @@ export default class MyWork extends Component {
           appearance, while perfecting the remaining elements to create a{' '}
           <b>beautiful</b> final product.
         </div>
+        <div className="x-container" />
+        <div className="line-container on-scroll">
+          <div className="line" />
+          <div className="line" />
+          <div className="line" />
+        </div>
       </div>
     );
   }

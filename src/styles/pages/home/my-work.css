@@ -3,7 +3,6 @@
   width: 100%;
   background: #6177f4;
   padding-top: 100px;
-  min-height: 500px; /* For Testing */
   z-index: 1;
 
   display: flex;
@@ -38,6 +37,7 @@ canvas {
   color: white;
   text-align: center;
   width: 80%;
+  margin-bottom: 50px;
 
   /* Animation Default */
   opacity: 0;
@@ -56,6 +56,25 @@ canvas {
 .MyWork .svg {
   width: 80px;
   margin: 0px 50px;
+}
+
+.MyWork .line-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.MyWork .line-container .line {
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 5px;
+  margin: 0px 50px;
+  margin-bottom: 100px;
+  position: relative;
+
+  /* Animation Default */
+  opacity: 0;
 }
 
 /* Animations */
@@ -92,6 +111,26 @@ canvas {
     opacity: 0;
   }
   100% {
+    opacity: 1;
+  }
+}
+
+.MyWork .line-container.anim .line {
+  animation-name: growAnim;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.MyWork .line-container.anim .line:nth-child(1),
+.MyWork .line-container.anim .line:nth-child(3) {
+  animation-delay: 0.25s;
+}
+@keyframes growAnim {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 20px;
     opacity: 1;
   }
 }
