@@ -138,12 +138,34 @@ export default class MyTech extends Component {
         scale: 0.5
       });
     });
+
+    // Anim on scroll
+    var els = $('.anim-on-scroll');
+    this.scrollableElements = [];
+    for (var i = 0; i < els.length; i++) {
+      var el = els.eq(i);
+      this.scrollableElements.push({ el: el, y: el.offset().top });
+    }
   }
+  componentWillReceiveProps(newProps) {
+    this.checkScroll(newProps.scrollY);
+  }
+  checkScroll(scrollY) {
+    for (var i = 0; i < this.scrollableElements.length; i++) {
+      var scrollable = this.scrollableElements[i];
+      if (scrollY + window.innerHeight >= scrollable.y) {
+        scrollable.el.addClass('anim');
+      } else {
+        scrollable.el.removeClass('anim');
+      }
+    }
+  }
+
   render() {
     return (
       <div className="MyTech">
         {/* The Text */}
-        <div className="left-side anim-on-scroll">
+        <div className="left-side anim-on-scroll" data-scrollcalc=".MyTech">
           <div className="title">My Proficiencies</div>
         </div>
 

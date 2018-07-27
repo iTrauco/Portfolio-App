@@ -36,11 +36,15 @@
   font-family: Fredoka;
   color: white;
   font-size: 50px;
-  text-align: center;
   z-index: 2;
   padding: 10px 50px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  /* Animation Default */
+  opacity: 0;
 }
-.MyTech .left-side .title::after {
+.MyTech .left-side .title::before {
   content: '';
   position: absolute;
   left: 0;
@@ -49,4 +53,21 @@
   height: 100%;
   background: RGB(248, 122, 99);
   z-index: -1;
+}
+
+/* Animations */
+.MyTech .left-side .title {
+  opacity: 0;
+  animation-name: introAnim;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes introAnim {
+  0% {
+    opacity: 1;
+    transform: translateX(-1000px);
+  }
+  100% {
+    opacity: 1;
+  }
 }
