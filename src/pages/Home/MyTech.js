@@ -140,10 +140,11 @@ export default class MyTech extends Component {
     });
 
     // Anim on scroll
-    var els = $('.anim-on-scroll');
+    var els = $('.MyTech .anim-on-scroll');
     this.scrollableElements = [];
     for (var i = 0; i < els.length; i++) {
       var el = els.eq(i);
+      console.log(el.offset().top);
       this.scrollableElements.push({ el: el, y: el.offset().top });
     }
   }
@@ -151,6 +152,7 @@ export default class MyTech extends Component {
     this.checkScroll(newProps.scrollY);
   }
   checkScroll(scrollY) {
+    console.log(scrollY);
     for (var i = 0; i < this.scrollableElements.length; i++) {
       var scrollable = this.scrollableElements[i];
       if (scrollY + window.innerHeight >= scrollable.y) {
@@ -165,7 +167,7 @@ export default class MyTech extends Component {
     return (
       <div className="MyTech">
         {/* The Text */}
-        <div className="left-side anim-on-scroll" data-scrollcalc=".MyTech">
+        <div className="left-side anim-on-scroll">
           <div className="title">My Proficiencies</div>
         </div>
 

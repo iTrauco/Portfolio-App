@@ -56,16 +56,17 @@
 }
 
 /* Animations */
-.MyTech .left-side .title {
+.MyTech .left-side.anim .title {
   opacity: 0;
   animation-name: introAnim;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  animation-delay: 1s;
 }
 @keyframes introAnim {
   0% {
-    opacity: 1;
-    transform: translateX(-1000px);
+    opacity: 0;
+    transform: translateX(-50px);
   }
   100% {
     opacity: 1;

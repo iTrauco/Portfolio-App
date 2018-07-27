@@ -10,7 +10,7 @@ class HomeBody extends Component {
     return (
       <div className="HomeBody">
         <MyWork scrollY={this.props.scrollY} />
-        <MyTech />
+        <MyTech scrollY={this.props.scrollY} />
       </div>
     );
   }
