@@ -10,7 +10,12 @@ export default class MyTech extends Component {
   componentDidMount() {
     var nodes = new vis.DataSet([
       /* Web Dev */
-      { id: 1, label: 'Web Development' },
+      {
+        id: 1,
+        label: 'Web Development',
+        physics: false,
+        x: 500
+      },
       /* Front End */
       { id: 2, label: 'Front End' },
       { id: 3, label: 'Javascript' },
@@ -28,10 +33,11 @@ export default class MyTech extends Component {
       { id: 14, label: 'MySQL' },
       { id: 15, label: 'Google Firebase' },
 
-      /* Web Design */
+      /* Web Design 
       { id: 16, label: 'Web Design' },
       { id: 17, label: 'Adobe Photoshop' },
       { id: 18, label: 'Adobe Illustrator' },
+      */
 
       /* Afterthoughts */
       { id: 19, label: 'PHP' },
@@ -57,11 +63,12 @@ export default class MyTech extends Component {
       { from: 20, to: 12 },
       { from: 20, to: 13 },
       { from: 20, to: 14 },
-      { from: 20, to: 15 },
+      { from: 20, to: 15 }
 
-      /* Web Design */
+      /* Web Design
       { from: 16, to: 17 },
       { from: 16, to: 18 }
+      */
     ]);
 
     var data = {
@@ -69,10 +76,12 @@ export default class MyTech extends Component {
       edges: edges
     };
 
+    var width = $('.vis-container').width();
+    var height = $('.vis-container').height();
     var options = {
+      width: width + 'px',
+      height: height + 'px',
       autoResize: true,
-      width: '100%',
-      height: '100%',
       edges: {
         color: { color: 'white', highlight: 'white' },
         width: 5
@@ -105,14 +114,42 @@ export default class MyTech extends Component {
           springConstant: 0.1,
           centralGravity: 0
         }
+      },
+      layout: {
+        randomSeed: 12129030198236,
+        improvedLayout: true,
+        hierarchical: {
+          enabled: false,
+          levelSeparation: 150,
+          direction: 'UD', // UD, DU, LR, RL
+          sortMethod: 'hubsize' // hubsize, directed
+        }
       }
     };
 
-    var container = $('.MyTech')[0];
+    var container = $('.vis-container')[0];
 
     var network = new vis.Network(container, data, options);
+    network.moveNode(1, window.innerWidth * 0.7, null);
+
+    network.once('afterDrawing', function() {
+      network.moveTo({
+        position: { x: 0, y: 0 },
+        scale: 0.5
+      });
+    });
   }
   render() {
-    return <div className="MyTech" />;
+    return (
+      <div className="MyTech">
+        {/* The Text */}
+        <div className="left-side on-click">
+          <div className="title">My Proficiencies</div>
+        </div>
+
+        {/* The Vis Network Canvas Container */}
+        <div className="vis-container" />
+      </div>
+    );
   }
 }
