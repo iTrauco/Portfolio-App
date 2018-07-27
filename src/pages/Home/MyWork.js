@@ -233,11 +233,12 @@ export default class MyWork extends Component {
         </div>
         <div className="section-sub-text on-scroll">
           I practice a <b>minimal</b>, <b>precise</b> design philosophy. I
-          believe <b>focused</b> efforts on the <b>fewest</b>, most{' '}
-          <b>vital elements</b> undoubtedly reaps better results. The best
-          user-experiences provide a <b>smooth</b>, <b>coherent</b> use-path
-          centered around the users <b>direct interaction</b>, <b>never</b>{' '}
-          replacing utility with appearance.
+          believe <b>focused</b> efforts on the <b>fewest</b>, most <b>vital</b>{' '}
+          elements undoubtedly reaps better results. The best user-experiences
+          provide a <b>smooth</b>, <b>coherent</b> use-path centered around the
+          users <b>direct interaction</b>. <b>Never</b> sacrificing utility for
+          appearance, while perfecting the remaining elements to create a{' '}
+          <b>beautiful</b> final product.
         </div>
       </div>
     );
