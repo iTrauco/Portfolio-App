@@ -22,7 +22,7 @@ export default class MyWork extends Component {
     for (var i = 0; i < onScrollEls.length; i++) {
       var el = onScrollEls.eq(i);
       this.scrollEls.push({
-        y: el.offset().top + el.height(),
+        y: el.offset().top,
         el: el
       });
     }
