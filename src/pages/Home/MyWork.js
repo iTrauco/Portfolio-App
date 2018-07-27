@@ -14,19 +14,6 @@ export default class MyWork extends Component {
   }
 
   componentDidMount() {
-    var onScrollEls = $('.on-scroll');
-    var container = $('.MyWork');
-
-    // Setup the on-scroll triggers
-    this.scrollEls = [];
-    for (var i = 0; i < onScrollEls.length; i++) {
-      var el = onScrollEls.eq(i);
-      this.scrollEls.push({
-        y: el.offset().top,
-        el: el
-      });
-    }
-
     /* Disabled for now... not sure how I feel about it.
     new CanvasWavy({
       canvas: $('.canvas-2'),
@@ -43,31 +30,16 @@ export default class MyWork extends Component {
     */
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.scrollEls) {
-      var scrollY = newProps.scrollY;
-      for (var i = 0; i < this.scrollEls.length; i++) {
-        var scrollEl = this.scrollEls[i];
-
-        if (scrollY + window.innerHeight >= scrollEl.y) {
-          scrollEl.el.addClass('anim');
-        } else {
-          scrollEl.el.removeClass('anim');
-        }
-      }
-    }
-  }
-
   render() {
     return (
       <div className="MyWork">
         <canvas className="canvas-2" />
         {/* Design Philosophy */}
-        <div className="section-title on-scroll">Design Philosophy</div>
-        <div className="svg-container on-scroll">
+        <div className="section-title anim-on-scroll">Design Philosophy</div>
+        <div className="svg-container anim-on-scroll">
           <MtSvgLines
             animate={svgDrawDelay}
-            className="svg on-scroll"
+            className="svg anim-on-scroll"
             trigger={2000}
             stagger={25}
             duration={3500}
@@ -114,7 +86,7 @@ export default class MyWork extends Component {
           <MtSvgLines
             animate={svgDrawDelay + 750}
             duration={5000}
-            className="svg on-scroll"
+            className="svg anim-on-scroll"
           >
             <svg viewBox="0 0 512 512">
               <path
@@ -128,7 +100,7 @@ export default class MyWork extends Component {
           <MtSvgLines
             animate={svgDrawDelay + 1500}
             duration={2500}
-            className="svg on-scroll"
+            className="svg anim-on-scroll"
             stagger={50}
           >
             <svg viewBox="0 0 512 512">
@@ -231,7 +203,7 @@ export default class MyWork extends Component {
             </svg>
           </MtSvgLines>
         </div>
-        <div className="section-sub-text on-scroll">
+        <div className="section-sub-text anim-on-scroll">
           I practice a <b>minimal</b>, <b>precise</b> design philosophy. I
           believe <b>focused</b> efforts on the <b>fewest</b>, most <b>vital</b>{' '}
           elements undoubtedly reaps better results. The best user-experiences
@@ -241,7 +213,7 @@ export default class MyWork extends Component {
           <b>beautiful</b> final product.
         </div>
         <div className="x-container" />
-        <div className="line-container on-scroll">
+        <div className="line-container anim-on-scroll">
           <div className="line" />
           <div className="line" />
           <div className="line" />

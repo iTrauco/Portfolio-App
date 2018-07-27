@@ -13,8 +13,10 @@ class Home extends Component {
       scrollY: 0
     };
     this.checkTypeShow();
+  }
 
-    $(window).on('scroll', this.trackScroll.bind(this));
+  componentDidMount() {
+    this.handleScrollables();
   }
 
   // The markup
@@ -28,7 +30,7 @@ class Home extends Component {
         {this.state.showPage && (
           <div>
             <HomeHeader isShown={this.state.showPage} />
-            <HomeBody scrollY={this.state.scrollY} />
+            <HomeBody />
           </div>
         )}
       </div>
@@ -45,6 +47,10 @@ class Home extends Component {
 
     // Remember this user has visited before
     localStorage.setItem('hasVisited', 'true');
+
+    // Now that the rest of the page is rendered,
+    // retrack the scrollable animations
+    this.handleScrollables();
   }
 
   // Check if the typing intro should be shown or not
@@ -63,10 +69,32 @@ class Home extends Component {
       this.state.showPage = false;
     }
   }
+  // Adding the anim class to elements that have been scrolled over
+  handleScrollables() {
+    var els = $('.anim-on-scroll');
 
-  // Tracking the user's scroll position
-  trackScroll() {
-    this.setState({ scrollY: $(window).scrollTop() });
+    // Store all
+    this.scrollElements = [];
+    for (var i = 0; i < els.length; i++) {
+      var el = els.eq(i);
+
+      this.scrollElements.push({ el: el, y: el.offset().top });
+    }
+
+    console.log(this.scrollElements);
+    // Check if the user has scroled over it every time the users scroll position changes
+    $(window).on(
+      'scroll',
+      function(e) {
+        for (var i = 0; i < this.scrollElements.length; i++) {
+          var scrollElement = this.scrollElements[i];
+          var scrollY = $(window).scrollTop();
+          if (scrollY + window.innerHeight >= scrollElement.y) {
+            scrollElement.el.addClass('anim');
+          }
+        }
+      }.bind(this)
+    );
   }
 }
 

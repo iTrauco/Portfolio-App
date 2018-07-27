@@ -143,7 +143,7 @@ export default class MyTech extends Component {
     return (
       <div className="MyTech">
         {/* The Text */}
-        <div className="left-side on-click">
+        <div className="left-side anim-on-scroll">
           <div className="title">My Proficiencies</div>
         </div>
 

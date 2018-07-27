@@ -5,6 +5,9 @@ import CanvasBall from '../../components/CanvasBall/CanvasBall';
 import heart from '../../assets/icons/heart.svg';
 
 class HomeHeader extends Component {
+  constructor(options) {
+    super(options);
+  }
   componentDidMount() {
     if (this.props.isShown) {
       this.triggerAnimations();
