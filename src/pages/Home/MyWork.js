@@ -15,7 +15,7 @@ export default class MyWork extends Component {
 
   componentDidMount() {
     // Anim on scroll
-    var els = $('.anim-on-scroll');
+    var els = $('.MyWork .anim-on-scroll');
     this.scrollableElements = [];
     for (var i = 0; i < els.length; i++) {
       var el = els.eq(i);

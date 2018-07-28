@@ -149,7 +149,7 @@ export default class MyTech extends Component {
 
       this.scrollableElements.push({
         el: el,
-        y: el.offset().top
+        y: el.offset().top + el.innerHeight() * 0.25
       });
     }
   }
@@ -157,7 +157,6 @@ export default class MyTech extends Component {
     this.checkScroll(newProps.scrollY);
   }
   checkScroll(scrollY) {
-    console.log(scrollY);
     for (var i = 0; i < this.scrollableElements.length; i++) {
       var scrollable = this.scrollableElements[i];
       if (scrollY + window.innerHeight >= scrollable.y) {
@@ -192,7 +191,7 @@ export default class MyTech extends Component {
         </div>
 
         {/* The Vis Network Canvas Container */}
-        <div className="vis-container" />
+        <div className="vis-container anim-on-scroll" />
 
         {/* Instructions for the Vis network */}
         <div className="instructions">(Click and drag)</div>
