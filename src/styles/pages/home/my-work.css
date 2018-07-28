@@ -3,6 +3,7 @@
   width: 100%;
   background: #6177f4;
   padding-top: 100px;
+  padding-bottom: 100px;
   z-index: 1;
 
   display: flex;
@@ -63,6 +64,7 @@ canvas {
   display: flex;
   width: 100%;
   justify-content: center;
+  height: 2px;
 }
 .MyWork .line-container .line {
   width: 20px;
@@ -79,12 +81,12 @@ canvas {
 
 /* Animations */
 .MyWork .section-title.anim {
-  animation-name: fromBelow;
+  animation-name: myWorkFromBelow;
   animation-duration: 0.5s;
   animation-delay: 0.2s;
   animation-fill-mode: forwards;
 }
-@keyframes fromBelow {
+@keyframes myWorkFromBelow {
   0% {
     opacity: 0;
     transform: translateY(10px);
@@ -95,18 +97,18 @@ canvas {
 }
 
 .MyWork .section-sub-text.anim {
-  animation-name: fromBelow;
+  animation-name: myWorkFromBelow;
   animation-duration: 0.5s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 
 .MyWork .svg-container.anim {
-  animation-name: fadeIn;
+  animation-name: myWorkFadeIn;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-@keyframes fadeIn {
+@keyframes myWorkFadeIn {
   0% {
     opacity: 0;
   }

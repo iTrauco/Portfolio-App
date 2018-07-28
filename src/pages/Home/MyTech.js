@@ -25,12 +25,10 @@ export default class MyTech extends Component {
       { id: 7, label: 'CSS' },
       { id: 8, label: 'SASS' },
       { id: 9, label: 'ReactJS' },
-      { id: 10, label: 'Wordpress' },
       /* Back End */
       { id: 11, label: 'Paypal' },
       { id: 12, label: 'NodeJS' },
       { id: 13, label: 'ExpressJS' },
-      { id: 14, label: 'MySQL' },
       { id: 15, label: 'Google Firebase' },
 
       /* Web Design 
@@ -41,7 +39,9 @@ export default class MyTech extends Component {
 
       /* Afterthoughts */
       { id: 19, label: 'PHP' },
-      { id: 20, label: 'Back End' }
+      { id: 10, label: 'Wordpress' },
+      { id: 20, label: 'Back End' },
+      { id: 21, label: 'React Native' }
     ]);
 
     var edges = new vis.DataSet([
@@ -54,16 +54,16 @@ export default class MyTech extends Component {
       { from: 2, to: 6 },
       { from: 2, to: 7 },
       { from: 7, to: 8 },
-      { from: 2, to: 10 },
-      { from: 2, to: 19 },
+      { from: 2, to: 21 },
 
       /* Back End */
       { from: 1, to: 20 },
       { from: 20, to: 11 },
       { from: 20, to: 12 },
       { from: 20, to: 13 },
-      { from: 20, to: 14 },
-      { from: 20, to: 15 }
+      { from: 20, to: 15 },
+      { from: 20, to: 19 },
+      { from: 19, to: 10 }
 
       /* Web Design
       { from: 16, to: 17 },
@@ -113,7 +113,9 @@ export default class MyTech extends Component {
           springLength: 300,
           springConstant: 0.1,
           centralGravity: 0
-        }
+        },
+        stabilization: false,
+        minVelocity: 0
       },
       layout: {
         randomSeed: 12129030198236,
@@ -135,7 +137,7 @@ export default class MyTech extends Component {
     network.once('afterDrawing', function() {
       network.moveTo({
         position: { x: 0, y: 0 },
-        scale: 0.5
+        scale: 0.45
       });
     });
 
@@ -144,8 +146,11 @@ export default class MyTech extends Component {
     this.scrollableElements = [];
     for (var i = 0; i < els.length; i++) {
       var el = els.eq(i);
-      console.log(el.offset().top);
-      this.scrollableElements.push({ el: el, y: el.offset().top });
+
+      this.scrollableElements.push({
+        el: el,
+        y: el.offset().top
+      });
     }
   }
   componentWillReceiveProps(newProps) {
@@ -157,8 +162,6 @@ export default class MyTech extends Component {
       var scrollable = this.scrollableElements[i];
       if (scrollY + window.innerHeight >= scrollable.y) {
         scrollable.el.addClass('anim');
-      } else {
-        scrollable.el.removeClass('anim');
       }
     }
   }
@@ -167,12 +170,32 @@ export default class MyTech extends Component {
     return (
       <div className="MyTech">
         {/* The Text */}
-        <div className="left-side anim-on-scroll">
-          <div className="title">My Proficiencies</div>
+        <div className="left-side">
+          <div className="text-container anim-on-scroll">
+            <div className="title">My Proficiencies</div>
+            <div className="sub-text">
+              I am constantly learning and improving my skills with numerous web
+              technologies, languages, and libraries. From wordpress to react,
+              the ones shown here I have become expertly capable with.
+              <br />
+              <br />
+              My front end skills span over <b>numerous</b> libraries that I
+              have worked with. My love for design is encouraged through my
+              ability to utilize these to the fullest.
+              <br />
+              <br />
+              On the back end, I consider myself professionally capable with all
+              the technologies listed, but my true passion lies in the visual,
+              front end side of the web.
+            </div>
+          </div>
         </div>
 
         {/* The Vis Network Canvas Container */}
         <div className="vis-container" />
+
+        {/* Instructions for the Vis network */}
+        <div className="instructions">(Click and drag)</div>
       </div>
     );
   }

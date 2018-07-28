@@ -45,8 +45,6 @@ export default class MyWork extends Component {
       var scrollable = this.scrollableElements[i];
       if (scrollY + window.innerHeight >= scrollable.y) {
         scrollable.el.addClass('anim');
-      } else {
-        scrollable.el.removeClass('anim');
       }
     }
   }

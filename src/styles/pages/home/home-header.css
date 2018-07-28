@@ -93,12 +93,12 @@
 /* Animations */
 .HomeHeader.anim .title {
   opacity: 0;
-  animation-name: fromLeft;
+  animation-name: fromLeftHeaderTitle;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 1s;
 }
-@keyframes fromLeft {
+@keyframes fromLeftHeaderTitle {
   0% {
     opacity: 0;
     transform: translateX(-50px);
@@ -110,12 +110,12 @@
 
 .HomeHeader.anim .header-text {
   opacity: 0;
-  animation-name: fromRight;
+  animation-name: fromRightHeaderText;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 1.5s;
 }
-@keyframes fromRight {
+@keyframes fromRightHeaderText {
   0% {
     opacity: 0;
     transform: translateX(50px);
@@ -127,29 +127,20 @@
 
 .HomeHeader.anim .sub-text {
   opacity: 0;
-  animation-name: fromRight;
+  animation-name: fromRightHeaderText;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 1.9s;
 }
-@keyframes fromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 .HomeHeader.anim .divider {
   height: 0;
-  animation-name: growHeight;
+  animation-name: growHeightHeaderDivider;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
   animation-delay: 1.25s;
 }
-@keyframes growHeight {
+@keyframes growHeightHeaderDivider {
   0% {
     height: 0;
   }
@@ -181,7 +172,7 @@
   animation-name: fromBottom;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
-  animation-delay: 6.3s;
+  animation-delay: 4s;
 }
 @keyframes fromBottom {
   0% {
