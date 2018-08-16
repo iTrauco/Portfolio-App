@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/components/type-effect.css';
-import GageLib from 'gages-library';
+import GageLib from '../gages-library/gagelib';
 import $ from 'jquery';
 
 // Adjustable Variables

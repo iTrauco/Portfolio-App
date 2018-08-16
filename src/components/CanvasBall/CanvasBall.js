@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import GageLib from 'gages-library';
+import GageLib from '../../gages-library/gagelib';
 import '../../styles/components/canvas-ball.css';
 
 var size = [1, 10];
