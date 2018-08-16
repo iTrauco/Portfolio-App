@@ -5,11 +5,15 @@
   padding-top: 100px;
   padding-bottom: 100px;
   z-index: 1;
+}
 
+/* The Content */
+.MyWork .content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 canvas {
   position: absolute;
   top: 0;
