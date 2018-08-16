@@ -2,14 +2,14 @@
   "name": "portfolio-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://quangogage.github.io/Portfolio-App",
+  "homepage": "https://quangogage.github.io",
   "dependencies": {
     "gages-library": "git+https://github.com/quangogage/Gages-Library.git",
     "jquery": "^3.3.1",
     "parallax-js": "^3.1.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-mt-svg-lines": "^0.8.4",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-mt-svg-lines": "^0.8.5",
     "react-scripts": "1.1.4",
     "vis": "^4.21.0"
   },
@@ -22,6 +22,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "github-pages": "^3.0.2"
   }
 }
