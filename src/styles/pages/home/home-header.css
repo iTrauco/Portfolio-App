@@ -3,8 +3,19 @@
   height: 100vh;
   width: 100%;
   background: #f47761;
-  display: flex;
   z-index: 0;
+}
+
+/* The Foreground Content */
+.HomeHeader .content {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1750px;
+  margin: auto;
+  height: 100%;
+  display: flex;
 }
 
 .HomeHeader .side {
@@ -41,7 +52,7 @@
 
 .HomeHeader .title {
   font-family: Bungee;
-  font-size: 3.5vw;
+  font-size: 54px;
   color: #737cd8;
   width: 80%;
 }
@@ -56,7 +67,7 @@
 }
 .HomeHeader .header-text {
   font-family: Patua;
-  font-size: 3vw;
+  font-size: 45px;
   color: white;
   margin-bottom: 15px;
 }
@@ -71,7 +82,7 @@
 }
 .HomeHeader .sub-text {
   font-family: Roboto-Mono;
-  font-size: 1.5vw;
+  font-size: 25px;
   color: white;
   width: 90%;
 }
@@ -182,5 +193,23 @@
   100% {
     transform: translateX(-50%);
     opacity: 0.4;
+  }
+}
+
+/* Media Queries */
+@media (min-width: 1575px) {
+  .HomeHeader .title {
+    font-size: 65px;
+  }
+  .HomeHeader .header-text {
+    font-size: 55px;
+  }
+  .HomeHeader .sub-text {
+    font-size: 30px;
+  }
+}
+@media (min-width: 2000px) {
+  .HomeHeader .title {
+    font-size: 75px;
   }
 }
