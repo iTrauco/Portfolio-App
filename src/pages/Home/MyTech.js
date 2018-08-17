@@ -134,12 +134,22 @@ export default class MyTech extends Component {
     var network = new vis.Network(container, data, options);
     network.moveNode(1, window.innerWidth * 0.7, null);
 
+    // Scaling the network
     network.once('afterDrawing', function() {
       network.moveTo({
         position: { x: 0, y: 0 },
         scale: 0.45
       });
     });
+
+    // Resizing the network
+    window.onresize = function() {
+      network.fit();
+      network.moveTo({
+        position: { x: 0, y: 0 },
+        scale: 0.45
+      });
+    };
 
     // Anim on scroll
     var els = $('.MyTech .anim-on-scroll');
@@ -168,8 +178,8 @@ export default class MyTech extends Component {
   render() {
     return (
       <div className="MyTech">
-        {/* The Text */}
-        <div className="left-side">
+        <div className="content">
+          {/* The Text */}
           <div className="text-container anim-on-scroll">
             <div className="title">My Proficiencies</div>
             <div className="sub-text">
@@ -188,13 +198,12 @@ export default class MyTech extends Component {
               front end side of the web.
             </div>
           </div>
-        </div>
 
+          {/* Instructions for the Vis network */}
+          <div className="instructions">(Click and drag)</div>
+        </div>
         {/* The Vis Network Canvas Container */}
         <div className="vis-container anim-on-scroll" />
-
-        {/* Instructions for the Vis network */}
-        <div className="instructions">(Click and drag)</div>
       </div>
     );
   }
