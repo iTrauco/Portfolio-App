@@ -169,7 +169,10 @@ export default class MyTech extends Component {
   checkScroll(scrollY) {
     for (var i = 0; i < this.scrollableElements.length; i++) {
       var scrollable = this.scrollableElements[i];
-      if (scrollY + window.innerHeight >= scrollable.y) {
+      if (
+        scrollY + window.innerHeight >=
+        scrollable.y + scrollable.el.height() * 0.4
+      ) {
         scrollable.el.addClass('anim');
       }
     }

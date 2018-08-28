@@ -56,6 +56,7 @@
   border: 2px solid #f47761;
   padding: 10px;
   padding-bottom: 25px;
+  pointer-events: none;
 
   box-shadow: 1px 1px #f47761, 2px 2px #f47761, 3px 3px #f47761, 4px 4px #f47761,
     5px 5px #f47761, 6px 6px #f47761, 7px 7px #f47761, 8px 8px #f47761,
@@ -118,7 +119,7 @@
 .MyTech .text-container.anim .sub-text {
   animation-name: fromBelow;
   animation-delay: 0.1s;
-  animation-duration: 0.5s;
+  animation-duration: 0.8s;
   animation-fill-mode: forwards;
 }
 @keyframes fromBelow {
@@ -133,14 +134,14 @@
 .MyTech .text-container.anim {
   animation-name: myTechFadeIn;
   animation-delay: 0.1s;
-  animation-duration: 0.2s;
+  animation-duration: 0.6s;
   animation-fill-mode: forwards;
 }
 .MyTech .vis-container.anim {
   opacity: 0;
   animation-name: myTechFadeIn;
   animation-delay: 0.2s;
-  animation-duration: 0.8s;
+  animation-duration: 1.2s;
   animation-fill-mode: forwards;
 }
 
