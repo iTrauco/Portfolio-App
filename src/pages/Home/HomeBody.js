@@ -10,7 +10,7 @@ class HomeBody extends Component {
   render() {
     return (
       <div className="HomeBody">
-        <MyServices scrollY={this.props.scrollY} />
+        {/*<MyServices scrollY={this.props.scrollY} />*/}
         <MyWork scrollY={this.props.scrollY} />
         <MyTech scrollY={this.props.scrollY} />
       </div>

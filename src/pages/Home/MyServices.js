@@ -6,9 +6,13 @@ class MyServices extends Component {
     return (
       <div className="MyServices">
         <div className="content">
+          <div className="title">My Services:</div>
           <div className="service">Fully Custom Design</div>
           <div className="service">Wordpress Sites</div>
-          <div className="service">Single-Page Applications</div>
+          <div className="service">Single-Page Web-Applications</div>
+          <div className="service">Updates to existing websites</div>
+          <div className="service">3d Web-Experiences</div>
+          <div className="service">HTML5 Games</div>
         </div>
       </div>
     );
