@@ -197,8 +197,8 @@ export default class MyTech extends Component {
               <br />
               <br />
               On the back end, I consider myself professionally capable with all
-              the technologies listed, but my true passion lies in the visual,
-              front end side of the web.
+              of the technologies listed, but my true passion lies in the
+              visual, front end side of the web.
             </div>
           </div>
 
