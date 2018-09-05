@@ -24,7 +24,8 @@ export default class CanvasBall {
 
     this.mouse = {
       x: this.c.canvas.width / 2,
-      y: this.c.canvas.height / 2
+      y: this.c.canvas.height / 2,
+      hasMoved: false
     };
     $(window).on('mousemove', this.trackMouse.bind(this));
 
@@ -62,6 +63,12 @@ export default class CanvasBall {
           GageLib.math.getDistance(ball.x, ball.y, this.mouse.x, this.mouse.y) /
           2;
         var force = mouseForce / (distance * 0.1);
+
+        // Decrease force if the user has not yet interacted
+        // with the canvas (or moved their mouse at all).
+        if (!this.mouse.hasMoved) {
+          force = force * 0.25;
+        }
 
         // Apply force from mouse if it is large enough
         if (force >= minForce) {
@@ -107,6 +114,7 @@ export default class CanvasBall {
   trackMouse(e) {
     this.mouse.x = e.pageX;
     this.mouse.y = e.pageY;
+    this.mouse.hasMoved = true;
   }
 
   // Check if the canvas is even on the screen
