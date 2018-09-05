@@ -21,12 +21,10 @@
 .ContactForm .window {
   padding: 11px 50px;
   border-radius: 5px;
-  background: #f47761;
+  background: #737cd8;
   display: flex;
   flex-direction: column;
-  box-shadow: 1px 1px #da6652, 2px 2px #da6652, 3px 3px #da6652, 4px 4px #da6652,
-    5px 5px #da6652, 6px 6px #da6652, 7px 7px #da6652, 8px 8px #da6652,
-    9px 9px #da6652, 10px 10px #da6652;
+  box-shadow: 10px 10px #545baa;
 }
 
 .ContactForm .title {
@@ -35,8 +33,8 @@
   color: white;
   margin-top: 10px;
   margin-bottom: 20px;
-  text-shadow: 1px 1px #737cd8, 2px 2px #737cd8, 3px 3px #737cd8,
-    4px 4px #737cd8, 5px 5px #737cd8, 6px 6px #737cd8;
+  text-shadow: 1px 1px #f47761, 2px 2px #f47761, 3px 3px #f47761,
+    4px 4px #f47761, 5px 5px #f47761, 6px 6px #f47761;
 }
 
 .ContactForm input,
@@ -63,21 +61,23 @@
   padding: 7px 30px;
   min-width: 200px;
   text-align: center;
-  color: #737cd8;
+  color: white;
   border-radius: 5px;
-  border: 2px solid #737cd8;
+  border: 2px solid #f47761;
+  background: #f47761;
   transition: background-color 0.2s, opacity 0.2s, transform 0.05s,
     box-shadow 0.025s;
   margin-bottom: 15px;
-  box-shadow: 5px 5px #5f67bd;
+  box-shadow: 5px 5px #ce5e4a;
 }
 .ContactForm .button:hover {
   cursor: pointer;
-  background: #737cd8;
   color: white;
+  transform: translateX(1px) translateY(1px);
+  box-shadow: 4px 4px #ce5e4a;
 }
 .ContactForm .button:active {
   cursor: pointer;
-  transform: translateX(1px) translateY(1px);
-  box-shadow: 4px 4px #5f67bd;
+  transform: translateX(2px) translateY(2px);
+  box-shadow: 3px 3px #ce5e4a;
 }
