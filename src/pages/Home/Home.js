@@ -5,6 +5,7 @@ import HomeHeader from './HomeHeader';
 import HomeBody from './HomeBody';
 import $ from 'jquery';
 import LinkMenu from '../../components/LinkMenu';
+import Message from '../../components/Message';
 
 class Home extends Component {
   constructor(options) {
@@ -13,8 +14,16 @@ class Home extends Component {
       introComplete: false,
       scrollY: 0
     };
+
+    // Check If you should show the typingintro
+    // animation on load
     this.checkTypeShow();
+
+    // Tracking the user's scroll position
     $(window).on('scroll', this.trackScroll.bind(this));
+
+    // A reference to the Message component
+    this.message = React.createRef();
   }
 
   // The markup
@@ -28,12 +37,21 @@ class Home extends Component {
         {this.state.showPage && (
           <div>
             <LinkMenu />
+            <Message ref={this.message} />
             <HomeHeader isShown={this.state.showPage} />
-            <HomeBody scrollY={this.state.scrollY} />
+            <HomeBody
+              scrollY={this.state.scrollY}
+              triggerMessage={this.triggerMessage.bind(this)}
+            />
           </div>
         )}
       </div>
     );
+  }
+
+  // Trigger the message component
+  triggerMessage() {
+    this.message.current.trigger();
   }
 
   // Trigger the completion of the intro typing effect

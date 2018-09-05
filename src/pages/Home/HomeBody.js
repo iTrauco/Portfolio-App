@@ -7,6 +7,8 @@ import ContactMe from './ContactMe';
 class HomeBody extends Component {
   constructor(options) {
     super(options);
+
+    console.log(this.props.triggerMessage);
   }
   render() {
     return (
@@ -14,7 +16,10 @@ class HomeBody extends Component {
         {/*<MyServices scrollY={this.props.scrollY} />*/}
         <MyWork scrollY={this.props.scrollY} />
         <MyTech scrollY={this.props.scrollY} />
-        <ContactMe scrollY={this.props.scrollY} />
+        <ContactMe
+          scrollY={this.props.scrollY}
+          triggerMessage={this.props.triggerMessage}
+        />
       </div>
     );
   }

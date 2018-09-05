@@ -1,0 +1,22 @@
+.Message {
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Roboto-Mono;
+  font-size: 16px;
+  z-index: 10;
+  color: white;
+  max-width: 350px;
+  text-align: center;
+  background: RGB(50, 50, 50);
+  border-radius: 5px;
+  padding: 15px 40px;
+  padding-bottom: 16px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  transition: 0.2s;
+}
+.Message.hidden {
+  transform: translateX(-50%) translateY(100%);
+}
