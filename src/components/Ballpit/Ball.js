@@ -1,4 +1,4 @@
-import GageLib from 'gages-library';
+import GageLib from '../../gages-library/gagelib';
 import $ from 'jquery';
 
 export default class Ball {

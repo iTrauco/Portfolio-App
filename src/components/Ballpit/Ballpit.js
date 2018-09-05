@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GageLib from 'gages-library';
+import GageLib from '../../gages-library/gagelib';
 import '../../styles/components/ballpit.css';
 import $ from 'jquery';
 import Ball from './Ball';
