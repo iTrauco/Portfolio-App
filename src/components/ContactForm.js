@@ -7,6 +7,7 @@ class ContactForm extends Component {
     return (
       <div className="ContactForm">
         <div className="window">
+          <div className="click-to-close" onClick={this.close.bind(this)} />
           <div className="title">Contact Me:</div>
 
           <input
@@ -25,6 +26,12 @@ class ContactForm extends Component {
 
   open() {
     $('.ContactForm').addClass('open');
+    $('body').css('overflow-y', 'hidden');
+  }
+
+  close() {
+    $('.ContactForm').removeClass('open');
+    $('body').css('overflow-y', 'auto');
   }
 }
 
