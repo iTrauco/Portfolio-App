@@ -186,9 +186,9 @@ export default class MyTech extends Component {
           <div className="text-container anim-on-scroll">
             <div className="title">My Proficiencies</div>
             <div className="sub-text">
-              I am constantly learning and improving my skills with numerous web
-              technologies, languages, and libraries. From wordpress to react,
-              the ones shown here I have become expertly capable with.
+              I am constantly learning and improving my skills with a multitude
+              of web technologies, languages, and libraries. From wordpress to
+              react, the ones shown here I have become expertly capable with.
               <br />
               <br />
               My front end skills span over <b>numerous</b> libraries that I
