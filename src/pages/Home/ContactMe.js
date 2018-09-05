@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import '../../styles/pages/home/contact-me.css';
+import Ballpit from '../../components/Ballpit/Ballpit';
 
 class ContactMe extends Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ class ContactMe extends Component {
   render() {
     return (
       <div className="ContactMe">
+        <Ballpit />
         <div className="content">
           {/* The Copy */}
           <div className="title anim-on-scroll">Contact Me</div>
