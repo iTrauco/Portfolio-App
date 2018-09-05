@@ -11,7 +11,8 @@ class ContactMe extends Component {
           <div className="title">Contact Me</div>
           <div className="line" />
           <div className="sub-text">
-            You can contact me via email, or the form linked below.
+            Want to hire me? Need some contract work? Just want to chat? You can
+            contact me via email, or the form linked below.
           </div>
 
           {/* CTA's */}

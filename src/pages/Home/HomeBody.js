@@ -5,11 +5,6 @@ import MyServices from './MyServices';
 import ContactMe from './ContactMe';
 
 class HomeBody extends Component {
-  constructor(options) {
-    super(options);
-
-    console.log(this.props.triggerMessage);
-  }
   render() {
     return (
       <div className="HomeBody">

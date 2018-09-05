@@ -18,7 +18,7 @@
   font-family: Bungee;
   font-size: 45px;
   color: white;
-  margin-top: 35px;
+  margin-top: 45px;
 
   text-shadow: 1px 1px #737cd8, 2px 2px #737cd8, 3px 3px #737cd8,
     4px 4px #737cd8, 5px 5px #737cd8, 6px 6px #737cd8, 7px 7px #737cd8,
@@ -41,6 +41,8 @@
   font-size: 19px;
   color: white;
   padding-top: 25px;
+  max-width: 600px;
+  margin: auto;
 }
 
 .ContactMe .contact-container {
