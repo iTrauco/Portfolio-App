@@ -19,7 +19,10 @@ export default class MyWork extends Component {
     this.scrollableElements = [];
     for (var i = 0; i < els.length; i++) {
       var el = els.eq(i);
-      this.scrollableElements.push({ el: el, y: el.offset().top });
+      this.scrollableElements.push({
+        el: el,
+        y: el.offset().top + el.height()
+      });
     }
 
     /* Disabled for now... not sure how I feel about it.
