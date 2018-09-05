@@ -19,4 +19,5 @@
 }
 .Message.hidden {
   transform: translateX(-50%) translateY(100%);
+  opacity: 0;
 }
