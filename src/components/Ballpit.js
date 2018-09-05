@@ -42,18 +42,21 @@ export default class Ballpit {
     // Clear the canvas
     this.c.clearRect(0, 0, this.c.canvas.width, this.c.canvas.height);
 
-    // Update the balls
-    for (var i = 0; i < this.balls.length; i++) {
-      var ball = this.balls[i];
+    // Update the balls IF you can even see the canvas
+    if (this.isOnScreen()) {
+      for (var i = 0; i < this.balls.length; i++) {
+        var ball = this.balls[i];
 
-      // Draw the balls
-      this.draw(ball);
+        // Draw the balls
+        this.draw(ball);
 
-      // Update all of the stuff
-      this.move(ball);
-      this.boundary(ball);
-      this.push(ball);
+        // Update all of the stuff
+        this.move(ball);
+        this.boundary(ball);
+        this.push(ball);
+      }
     }
+
     window.requestAnimationFrame(this.update.bind(this));
   }
   draw(ball) {
@@ -162,6 +165,29 @@ export default class Ballpit {
         yvel: yvel,
         size: size
       });
+    }
+  }
+
+  // Check if the canvas is in the user's viewport
+  isOnScreen() {
+    var x = this.canvas.offset().left;
+    var y = this.canvas.offset().top;
+    var width = this.width;
+    var height = this.height;
+    var screenX = 0;
+    var screenY = $(window).scrollTop();
+    var screenWidth = window.innerWidth;
+    var screenHeight = window.innerHeight;
+
+    if (
+      x <= screenX + screenWidth &&
+      x + width >= screenX &&
+      y <= screenY + screenHeight &&
+      y + height >= screenY
+    ) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
