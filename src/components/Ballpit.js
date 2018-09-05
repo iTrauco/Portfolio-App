@@ -2,12 +2,14 @@ import $ from 'jquery';
 import GageLib from '../gages-library/gagelib';
 
 // Adjustable Variables
-var amount = 50;
+var amount = 100;
 var startVel = [5, 7];
 var ballSize = [15, 35];
 var friction = 0.99;
 var mouseForce = 0.5;
 var bounce = 1.05;
+var maxVelocity = 10;
+var maxPushRange = 250;
 
 export default class Ballpit {
   constructor(options) {
@@ -63,8 +65,21 @@ export default class Ballpit {
 
   /* ** Ball Functions ** */
   move(ball) {
+    // Velocity
     ball.x += ball.xvel;
     ball.y += ball.yvel;
+
+    // Maximum velocity
+    if (ball.xvel > maxVelocity) {
+      ball.xvel = maxVelocity;
+    } else if (ball.xvel < -maxVelocity) {
+      ball.xvel = -maxVelocity;
+    }
+    if (ball.yvel > maxVelocity) {
+      ball.yvel = maxVelocity;
+    } else if (ball.yvel < -maxVelocity) {
+      ball.yvel = -maxVelocity;
+    }
     if (
       this.mouse.y > 0 &&
       this.mouse.y < this.c.canvas.height &&
@@ -100,8 +115,17 @@ export default class Ballpit {
     ) {
       var angle =
         Math.atan2(this.mouse.y - ball.y, this.mouse.x - ball.x) + Math.PI;
-      ball.xvel += Math.cos(angle) * mouseForce;
-      ball.yvel += Math.sin(angle) * mouseForce;
+      var distance = GageLib.math.getDistance(
+        this.mouse.x,
+        this.mouse.y,
+        ball.x,
+        ball.y
+      );
+
+      if (distance <= maxPushRange) {
+        ball.xvel += Math.cos(angle) * (mouseForce / (distance / 100));
+        ball.yvel += Math.sin(angle) * (mouseForce / (distance / 100));
+      }
     }
   }
 
