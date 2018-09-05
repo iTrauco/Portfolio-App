@@ -3,7 +3,7 @@ import GageLib from '../gages-library/gagelib';
 
 // Adjustable Variables
 var amount = 100;
-var startVel = [5, 7];
+var startVel = [2, 2];
 var ballSize = [15, 35];
 var friction = 0.99;
 var mouseForce = 0.5;
