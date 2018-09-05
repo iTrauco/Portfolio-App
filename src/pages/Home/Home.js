@@ -4,6 +4,7 @@ import '../../styles/pages/home/home.css';
 import HomeHeader from './HomeHeader';
 import HomeBody from './HomeBody';
 import $ from 'jquery';
+import LinkMenu from '../../components/LinkMenu';
 
 class Home extends Component {
   constructor(options) {
@@ -26,6 +27,7 @@ class Home extends Component {
         />
         {this.state.showPage && (
           <div>
+            <LinkMenu />
             <HomeHeader isShown={this.state.showPage} />
             <HomeBody scrollY={this.state.scrollY} />
           </div>

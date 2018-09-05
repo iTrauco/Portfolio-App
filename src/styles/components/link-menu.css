@@ -1,0 +1,48 @@
+/* The Contact Me Button */
+.LinkMenu .contact {
+  position: fixed;
+  z-index: 9;
+  font-family: Patua;
+  font-size: 20px;
+  color: white;
+  bottom: 15px;
+  left: 25px;
+}
+.contact i {
+  margin-right: 4px;
+  font-size: 25px;
+  transform: translateY(-1px);
+  padding: 13px 12px;
+  border-radius: 50%;
+}
+.contact .text {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  transition: 0.2s;
+  opacity: 0;
+}
+.contact:hover > .text {
+  left: 80%;
+  opacity: 1;
+}
+.contact:hover {
+  cursor: pointer;
+}
+
+/* The Links */
+.LinkMenu .link-container {
+  position: fixed;
+  bottom: 15px;
+  right: 25px;
+  display: flex;
+  z-index: 9;
+  font-size: 40px;
+}
+
+.LinkMenu .link-container i {
+  color: white;
+  margin-left: 15px;
+}
