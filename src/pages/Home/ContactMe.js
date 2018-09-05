@@ -53,7 +53,7 @@ class ContactMe extends Component {
           {/* CTA's */}
           <div className="contact-container anim-on-scroll">
             <div className="button-container">
-              <div className="button">
+              <div className="button" onClick={this.props.openContactForm}>
                 <i className="fas fa-pencil-alt" />
                 Contact Me
               </div>

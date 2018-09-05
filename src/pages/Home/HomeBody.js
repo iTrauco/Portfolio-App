@@ -14,6 +14,7 @@ class HomeBody extends Component {
         <ContactMe
           scrollY={this.props.scrollY}
           triggerMessage={this.props.triggerMessage}
+          openContactForm={this.props.openContactForm}
         />
       </div>
     );
