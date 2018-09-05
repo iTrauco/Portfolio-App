@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import '../../styles/pages/home/contact-me.css';
-import Ballpit from '../../components/Ballpit/Ballpit';
+import Ballpit from '../../components/Ballpit';
 
 class ContactMe extends Component {
   componentDidMount() {
@@ -15,6 +15,13 @@ class ContactMe extends Component {
         y: el.offset().top + el.height()
       });
     }
+
+    // Generate the ballpit
+    this.ballPit = new Ballpit({
+      canvas: $('#Ballpit'),
+      width: $('.ContactMe').innerWidth(),
+      height: $('.ContactMe').innerHeight()
+    });
   }
   componentWillReceiveProps(newProps) {
     this.checkScroll(newProps.scrollY);
@@ -31,7 +38,9 @@ class ContactMe extends Component {
   render() {
     return (
       <div className="ContactMe">
-        <Ballpit />
+        {/* The Canvas for the Ballpit */}
+        <canvas id="Ballpit" />
+
         <div className="content">
           {/* The Copy */}
           <div className="title anim-on-scroll">Contact Me</div>
