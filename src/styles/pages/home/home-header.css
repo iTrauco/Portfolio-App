@@ -183,12 +183,12 @@
   animation-name: fromBottom;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
-  animation-delay: 4s;
+  animation-delay: 2.25s;
 }
 @keyframes fromBottom {
   0% {
     opacity: 0;
-    transform: translateX(-50%) translateY(25%);
+    transform: translateX(-50%) translateY(-25%);
   }
   100% {
     transform: translateX(-50%);
