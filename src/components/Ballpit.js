@@ -7,7 +7,7 @@ var startVel = [2, 2];
 var ballSize = [15, 35];
 var friction = 0.99;
 var mouseForce = 0.5;
-var bounce = 1.05;
+var bounce = 0.9;
 var maxVelocity = 10;
 var maxPushRange = 250;
 
@@ -68,6 +68,13 @@ export default class Ballpit {
 
   /* ** Ball Functions ** */
   move(ball) {
+    var distance = GageLib.math.getDistance(
+      this.mouse.x,
+      this.mouse.y,
+      ball.x,
+      ball.y
+    );
+
     // Velocity
     ball.x += ball.xvel;
     ball.y += ball.yvel;
@@ -87,7 +94,8 @@ export default class Ballpit {
       this.mouse.y > 0 &&
       this.mouse.y < this.c.canvas.height &&
       this.mouse.x > 0 &&
-      this.mouse.x < this.c.canvas.width
+      this.mouse.x < this.c.canvas.width &&
+      distance <= maxPushRange
     ) {
       ball.xvel *= friction;
       ball.yvel *= friction;
