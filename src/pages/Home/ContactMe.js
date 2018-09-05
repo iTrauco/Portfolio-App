@@ -34,8 +34,14 @@ class ContactMe extends Component {
 
   // Copy the email address to clipboard on click
   copyEmail() {
+    // Select the email div's html
     $('.email').select();
+
+    // Copy it to your clipboard
     document.execCommand('copy');
+
+    // Let the user know!
+    this.props.triggerMessage();
   }
 }
 
