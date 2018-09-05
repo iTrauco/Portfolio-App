@@ -117,6 +117,15 @@
   justify-content: flex-end;
   width: 50%;
   height: 100%;
+
+  /* Animation Defaults */
+  opacity: 0;
+  transform: translateX(-25px);
+  transition: 0.5s;
+}
+.ContactMe .contact-container.anim .button-container {
+  opacity: 1;
+  transform: translateX(0px);
 }
 .ContactMe .button {
   color: white;
@@ -128,15 +137,6 @@
   transition: 0.1s;
   box-shadow: 0px 0px #4355bd, 1px 1px #4355bd, 2px 2px #4355bd, 3px 3px #4355bd,
     4px 4px #4355bd, 5px 5px #4355bd;
-
-  /* Animation Defaults */
-  opacity: 0;
-  transform: translateX(-25px);
-  transition: 0.5s;
-}
-.ContactMe .contact-container.anim .button {
-  opacity: 1;
-  transform: translateX(0px);
 }
 .ContactMe .button i {
   margin-right: 0.3rem;
