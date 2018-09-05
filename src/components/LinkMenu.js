@@ -10,7 +10,7 @@ class LinkMenu extends Component {
     return (
       <div className="LinkMenu">
         {/* The Contact Me Button */}
-        <div className="contact">
+        <div className="contact" onClick={this.props.openContactForm}>
           <i className="fas fa-edit" />
           <div className="text">Contact Me</div>
         </div>

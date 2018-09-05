@@ -6,6 +6,7 @@ import HomeBody from './HomeBody';
 import $ from 'jquery';
 import LinkMenu from '../../components/LinkMenu';
 import Message from '../../components/Message';
+import ContactForm from '../../components/ContactForm';
 
 class Home extends Component {
   constructor(options) {
@@ -22,8 +23,9 @@ class Home extends Component {
     // Tracking the user's scroll position
     $(window).on('scroll', this.trackScroll.bind(this));
 
-    // A reference to the Message component
+    // References to the message & contact-form components
     this.message = React.createRef();
+    this.contactForm = React.createRef();
   }
 
   // The markup
@@ -36,12 +38,14 @@ class Home extends Component {
         />
         {this.state.showPage && (
           <div>
-            <LinkMenu />
+            <LinkMenu openContactForm={this.openContactForm.bind(this)} />
+            <ContactForm ref={this.contactForm} />
             <Message ref={this.message} />
             <HomeHeader isShown={this.state.showPage} />
             <HomeBody
               scrollY={this.state.scrollY}
               triggerMessage={this.triggerMessage.bind(this)}
+              openContactForm={this.openContactForm.bind(this)}
             />
           </div>
         )}
@@ -52,6 +56,11 @@ class Home extends Component {
   // Trigger the message component
   triggerMessage() {
     this.message.current.trigger();
+  }
+
+  // Opening the contact form
+  openContactForm() {
+    this.contactForm.current.open();
   }
 
   // Trigger the completion of the intro typing effect

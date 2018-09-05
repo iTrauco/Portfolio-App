@@ -1,0 +1,83 @@
+.ContactForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  z-index: 11;
+  opacity: 0;
+  background: RGBA(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.ContactForm.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ContactForm .window {
+  padding: 11px 50px;
+  border-radius: 5px;
+  background: #f47761;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px #da6652, 2px 2px #da6652, 3px 3px #da6652, 4px 4px #da6652,
+    5px 5px #da6652, 6px 6px #da6652, 7px 7px #da6652, 8px 8px #da6652,
+    9px 9px #da6652, 10px 10px #da6652;
+}
+
+.ContactForm .title {
+  font-family: Bungee;
+  font-size: 40px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px #737cd8, 2px 2px #737cd8, 3px 3px #737cd8,
+    4px 4px #737cd8, 5px 5px #737cd8, 6px 6px #737cd8;
+}
+
+.ContactForm input,
+.ContactForm textarea {
+  position: relative;
+  width: 600px;
+  border: 0px;
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 22px;
+  font-family: Roboto-Thin;
+  margin-bottom: 20px;
+  resize: none;
+  box-shadow: inset 5px 5px 3px RGBA(0, 0, 0, 0.1);
+}
+.ContactForm textarea {
+  min-height: 300px;
+}
+
+.ContactForm .button {
+  margin: auto;
+  font-family: Bungee;
+  font-size: 22px;
+  padding: 7px 30px;
+  min-width: 200px;
+  text-align: center;
+  color: #737cd8;
+  border-radius: 5px;
+  border: 2px solid #737cd8;
+  transition: background-color 0.2s, opacity 0.2s, transform 0.05s,
+    box-shadow 0.025s;
+  margin-bottom: 15px;
+  box-shadow: 5px 5px #5f67bd;
+}
+.ContactForm .button:hover {
+  cursor: pointer;
+  background: #737cd8;
+  color: white;
+}
+.ContactForm .button:active {
+  cursor: pointer;
+  transform: translateX(1px) translateY(1px);
+  box-shadow: 4px 4px #5f67bd;
+}
