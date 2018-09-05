@@ -7,7 +7,7 @@ var startVel = [2, 2];
 var ballSize = [15, 35];
 var friction = 0.99;
 var mouseForce = 0.5;
-var bounce = 0.9;
+var bounce = 0.95;
 var maxVelocity = 10;
 var maxPushRange = 250;
 
