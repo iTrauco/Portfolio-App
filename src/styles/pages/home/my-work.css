@@ -1,0 +1,39 @@
+.MyWork {
+  position: relative;
+  background: #6177f4;
+}
+
+.MyWork .content {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  max-width: 1750px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* The Title */
+.MyWork .title {
+  display: inline-block;
+  font-family: Concert;
+  font-size: 56px;
+  color: white;
+  background: #f47761;
+  padding: 5px 25px;
+  padding-bottom: 15px;
+  width: 350px;
+  border-radius: 3px;
+  box-shadow: 8px 8px #cf6350;
+}
+
+.MyWork .title::after {
+  content: '';
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: white;
+  margin: auto;
+  margin-top: 10px;
+  opacity: 0.5;
+}
