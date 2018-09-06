@@ -17,11 +17,13 @@ class ContactMe extends Component {
     }
 
     // Generate the ballpit
-    this.ballPit = new Ballpit({
-      canvas: $('#Ballpit'),
-      width: $('.ContactMe').innerWidth(),
-      height: $('.ContactMe').innerHeight()
-    });
+    setTimeout(function() {
+      this.ballPit = new Ballpit({
+        canvas: $('#Ballpit'),
+        width: $('.ContactMe').innerWidth(),
+        height: $('.ContactMe').innerHeight()
+      });
+    }, 500);
   }
   componentWillReceiveProps(newProps) {
     this.checkScroll(newProps.scrollY);
