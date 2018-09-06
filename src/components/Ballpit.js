@@ -113,7 +113,7 @@ export default class Ballpit {
       ball.y = ball.size / 2 + 1;
       ball.yvel *= -bounce;
     } else if (ball.y + ball.size / 2 > this.c.canvas.height) {
-      ball.y - this.c.canvas.height - ball.size / 2 - 1;
+      ball.y = this.c.canvas.height - ball.size / 2 - 1;
       ball.yvel *= -bounce;
     }
   }
