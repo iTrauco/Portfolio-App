@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/pages/home/my-work.css';
+import '../../styles/pages/home/my-design.css';
 import MtSvgLines from 'react-mt-svg-lines';
 import $ from 'jquery';
 import CanvasWavy from '../../components/CanvasWavy';
@@ -8,14 +8,14 @@ import CanvasDrip from '../../components/CanvasDrip';
 var svgStrokeWidth = 10;
 var svgDrawDelay = 100;
 
-export default class MyWork extends Component {
+export default class MyDesign extends Component {
   constructor(options) {
     super(options);
   }
 
   componentDidMount() {
     // Anim on scroll
-    var els = $('.MyWork .anim-on-scroll');
+    var els = $('.MyDesign .anim-on-scroll');
     this.scrollableElements = [];
     for (var i = 0; i < els.length; i++) {
       var el = els.eq(i);
@@ -54,7 +54,7 @@ export default class MyWork extends Component {
 
   render() {
     return (
-      <div className="MyWork">
+      <div className="MyDesign">
         <div className="content">
           <canvas className="canvas-2" />
           {/* Design Philosophy */}
