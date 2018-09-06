@@ -1,4 +1,4 @@
-.MyWork {
+.MyDesign {
   position: relative;
   width: 100%;
   background: #6177f4;
@@ -8,7 +8,7 @@
 }
 
 /* The Content */
-.MyWork .content {
+.MyDesign .content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@ canvas {
   opacity: 0.5;
 }
 
-.MyWork .section-title {
+.MyDesign .section-title {
   font-family: Concert;
   color: white;
   font-size: 70px;
@@ -38,7 +38,7 @@ canvas {
   /* Animation Default */
   opacity: 0;
 }
-.MyWork .section-sub-text {
+.MyDesign .section-sub-text {
   font-family: roboto-thin;
   font-size: 21px;
   color: white;
@@ -50,7 +50,7 @@ canvas {
   opacity: 0;
 }
 
-.MyWork .svg-container {
+.MyDesign .svg-container {
   display: flex;
   justify-content: center;
   width: 80%;
@@ -60,19 +60,19 @@ canvas {
   /* Animation Default */
   opacity: 0;
 }
-.MyWork .svg {
+.MyDesign .svg {
   width: 80px;
   margin: 0px 50px;
 }
 
-.MyWork .line-container {
+.MyDesign .line-container {
   position: relative;
   display: flex;
   width: 100%;
   justify-content: center;
   height: 2px;
 }
-.MyWork .line-container .line {
+.MyDesign .line-container .line {
   width: 20px;
   height: 2px;
   background: white;
@@ -86,13 +86,13 @@ canvas {
 }
 
 /* Animations */
-.MyWork .section-title.anim {
-  animation-name: myWorkFromBelow;
+.MyDesign .section-title.anim {
+  animation-name: MyDesignFromBelow;
   animation-duration: 0.5s;
   animation-delay: 0.2s;
   animation-fill-mode: forwards;
 }
-@keyframes myWorkFromBelow {
+@keyframes MyDesignFromBelow {
   0% {
     opacity: 0;
     transform: translateY(10px);
@@ -102,19 +102,19 @@ canvas {
   }
 }
 
-.MyWork .section-sub-text.anim {
-  animation-name: myWorkFromBelow;
+.MyDesign .section-sub-text.anim {
+  animation-name: MyDesignFromBelow;
   animation-duration: 0.5s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 
-.MyWork .svg-container.anim {
-  animation-name: myWorkFadeIn;
+.MyDesign .svg-container.anim {
+  animation-name: MyDesignFadeIn;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-@keyframes myWorkFadeIn {
+@keyframes MyDesignFadeIn {
   0% {
     opacity: 0;
   }
@@ -123,13 +123,13 @@ canvas {
   }
 }
 
-.MyWork .line-container.anim .line {
+.MyDesign .line-container.anim .line {
   animation-name: growAnim;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-.MyWork .line-container.anim .line:nth-child(1),
-.MyWork .line-container.anim .line:nth-child(3) {
+.MyDesign .line-container.anim .line:nth-child(1),
+.MyDesign .line-container.anim .line:nth-child(3) {
   animation-delay: 0.25s;
 }
 @keyframes growAnim {
