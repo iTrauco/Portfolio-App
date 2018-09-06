@@ -155,4 +155,15 @@
 /* The Ballpit canvas */
 .ContactMe canvas {
   z-index: 0;
+  animation: canvasIntro 2s ease 0.2s 1 normal forwards;
+  /* Animation Defaults */
+  opacity: 0;
+}
+@keyframes canvasIntro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.4;
+  }
 }
