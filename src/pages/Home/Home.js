@@ -3,6 +3,7 @@ import TypeEffect from '../../components/TypeEffect';
 import '../../styles/pages/home/home.css';
 import HomeHeader from './HomeHeader';
 import HomeBody from './HomeBody';
+import HomeFooter from './HomeFooter.js';
 import $ from 'jquery';
 import LinkMenu from '../../components/LinkMenu';
 import Message from '../../components/Message';
@@ -47,6 +48,7 @@ class Home extends Component {
               triggerMessage={this.triggerMessage.bind(this)}
               openContactForm={this.openContactForm.bind(this)}
             />
+            <HomeFooter />
           </div>
         )}
       </div>
