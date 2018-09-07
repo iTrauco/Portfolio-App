@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Project from '../../components/Project';
+import ribbon from '../../assets/images/ribbon.png';
 import '../../styles/pages/home/my-work.css';
 
 // The MyWork Blade Component
@@ -8,7 +9,10 @@ class MyWork extends Component {
     return (
       <div className="MyWork">
         <div className="content">
-          <div className="title">My Work:</div>
+          <div className="title">
+            <img className="title-ribbon" src={ribbon} />
+            My Work:
+          </div>
           <div className="project-container">
             {projects.map((project, index) => {
               return (
