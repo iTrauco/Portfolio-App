@@ -2,16 +2,42 @@ import React, { Component } from 'react';
 import Project from '../../components/Project';
 import ribbon from '../../assets/images/ribbon.png';
 import '../../styles/pages/home/my-work.css';
+import $ from 'jquery';
 
 // The MyWork Blade Component
 class MyWork extends Component {
+  componentDidMount() {
+    // Anim on scroll
+    var els = $('.MyWork .anim-on-scroll');
+    this.scrollableElements = [];
+    for (var i = 0; i < els.length; i++) {
+      var el = els.eq(i);
+
+      this.scrollableElements.push({
+        el: el,
+        y: el.offset().top + el.height() * 0.5
+      });
+    }
+  }
+  componentWillReceiveProps(newProps) {
+    this.checkScroll(newProps.scrollY);
+  }
+  checkScroll(scrollY) {
+    for (var i = 0; i < this.scrollableElements.length; i++) {
+      var scrollable = this.scrollableElements[i];
+      if (scrollY + window.innerHeight * 0.66 >= scrollable.y) {
+        scrollable.el.addClass('anim');
+      }
+    }
+  }
+
   render() {
     return (
       <div className="MyWork">
         <div className="content">
-          <div className="title">
+          <div className="title anim-on-scroll">
             <img className="title-ribbon" src={ribbon} alt="" />
-            My Work:
+            <div className="text">My Work:</div>
           </div>
           <div className="project-container">
             {projects.map((project, index) => {
@@ -23,6 +49,7 @@ class MyWork extends Component {
                   link={project.link}
                   description={project.description}
                   images={project.images}
+                  scrollY={this.props.scrollY}
                 />
               );
             })}

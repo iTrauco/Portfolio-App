@@ -20,7 +20,7 @@ class Project extends Component {
 
   render() {
     return (
-      <div className="Project">
+      <div className="Project anim-on-scroll">
         {/* The Text */}
         <div className="text-container">
           <div className="name">
