@@ -1,6 +1,10 @@
 .Project {
   position: relative;
   display: flex;
+  margin: 50px 0px;
+}
+.Project:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 /* The Text */
@@ -9,7 +13,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 48%;
+  width: 46%;
 }
 
 .Project .name {
@@ -34,7 +38,7 @@
 
 .Project .name .ribbon {
   position: absolute;
-  width: 75%;
+  width: 380px;
   height: 90%;
   top: 50%;
   left: -15px;
@@ -93,11 +97,14 @@
   content: '';
   display: none !important;
 }
+.Project:nth-child(even) .link {
+  align-self: flex-start;
+}
 
 /* The Seperating Line */
 .Project .line {
   background: white;
-  margin: 0px 2%;
+  margin: 0px 4%;
   width: 1px;
   height: 450px;
   opacity: 0.4;
@@ -109,9 +116,10 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 48%;
+  width: 46%;
 }
 .Project .image-container img {
   width: 100%;
   margin: auto;
+  box-shadow: 0px 0px 10px RGBA(50, 50, 50, 0.1);
 }
