@@ -86,7 +86,7 @@ canvas {
 }
 
 /* Animations */
-.MyDesign .section-title.anim {
+.MyDesign.anim .section-title {
   animation-name: MyDesignFromBelow;
   animation-duration: 0.5s;
   animation-delay: 0.2s;
@@ -102,14 +102,14 @@ canvas {
   }
 }
 
-.MyDesign .section-sub-text.anim {
+.MyDesign.anim .section-sub-text {
   animation-name: MyDesignFromBelow;
   animation-duration: 0.5s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 
-.MyDesign .svg-container.anim {
+.MyDesign.anim .svg-container {
   animation-name: MyDesignFadeIn;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -123,13 +123,13 @@ canvas {
   }
 }
 
-.MyDesign .line-container.anim .line {
+.MyDesign.anim .line-container .line {
   animation-name: growAnim;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-.MyDesign .line-container.anim .line:nth-child(1),
-.MyDesign .line-container.anim .line:nth-child(3) {
+.MyDesign.anim .line-container .line:nth-child(1),
+.MyDesign.anim .line-container .line:nth-child(3) {
   animation-delay: 0.25s;
 }
 @keyframes growAnim {
