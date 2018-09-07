@@ -152,14 +152,14 @@ export default class MyTech extends Component {
     };
 
     // Anim on scroll
-    var els = $('.MyTech .anim-on-scroll');
+    var els = $('.MyTech');
     this.scrollableElements = [];
     for (var i = 0; i < els.length; i++) {
       var el = els.eq(i);
 
       this.scrollableElements.push({
         el: el,
-        y: el.offset().top + el.innerHeight() * 0.25
+        y: el.offset().top + el.height() * 0.5
       });
     }
   }
@@ -169,10 +169,7 @@ export default class MyTech extends Component {
   checkScroll(scrollY) {
     for (var i = 0; i < this.scrollableElements.length; i++) {
       var scrollable = this.scrollableElements[i];
-      if (
-        scrollY + window.innerHeight >=
-        scrollable.y + scrollable.el.height() * 0.4
-      ) {
+      if (scrollY + window.innerHeight * 0.66 >= scrollable.y) {
         scrollable.el.addClass('anim');
       }
     }
@@ -183,7 +180,7 @@ export default class MyTech extends Component {
       <div className="MyTech">
         <div className="content">
           {/* The Text */}
-          <div className="text-container anim-on-scroll">
+          <div className="text-container">
             <div className="title">My Proficiencies</div>
             <div className="sub-text">
               I am constantly learning and improving my skills with a multitude
@@ -206,7 +203,7 @@ export default class MyTech extends Component {
           <div className="instructions">(Click and drag)</div>
         </div>
         {/* The Vis Network Canvas Container */}
-        <div className="vis-container anim-on-scroll" />
+        <div className="vis-container" />
       </div>
     );
   }

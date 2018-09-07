@@ -102,7 +102,7 @@
 }
 
 /* Animations */
-.MyTech .text-container.anim .title {
+.MyTech.anim .text-container .title {
   animation-name: fromLeft;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
@@ -116,7 +116,7 @@
   }
 }
 
-.MyTech .text-container.anim .sub-text {
+.MyTech.anim .text-container .sub-text {
   animation-name: fromBelow;
   animation-delay: 0.1s;
   animation-duration: 0.8s;
@@ -131,13 +131,13 @@
   }
 }
 
-.MyTech .text-container.anim {
+.MyTech.anim .text-container {
   animation-name: myTechFadeIn;
   animation-delay: 0.1s;
   animation-duration: 0.6s;
   animation-fill-mode: forwards;
 }
-.MyTech .vis-container.anim {
+.MyTech.anim .vis-container {
   opacity: 0;
   animation-name: myTechFadeIn;
   animation-delay: 0.2s;
