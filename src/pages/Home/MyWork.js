@@ -50,11 +50,11 @@ var projects = [
 
       This project was a lot of fun. I used the
       <a href="https://www.advancedcustomfields.com/" target="_blank">
-      Advanced Custom Fields</a> which allowed me to easily make nearly 
+      Advanced Custom Fields</a> plugin which allowed me to easily make nearly 
       any element on the site customizable for the client. There is also a 
       <a href="https://canbyedfoundation.org/grant-form/">grant application
       form</a> on the site. Which, in making it, helped me learn a lot about
-      Wordpress & smtp.
+      Wordpress & SMTP.
     `,
     images: ['/canby-ed-foundation/1.png', '/canby-ed-foundation/2.png']
   }
