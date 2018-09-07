@@ -88,6 +88,28 @@ var projects = [
       performance.
     `,
     images: ['/portfolio/1.png']
+  },
+  {
+    name: 'Gatorstep Configurator',
+    link: 'http://gatorstep.quangostaging.com/configurator/',
+    description: `
+      Gatorstep is a quality flooring manufactorer. I was tasked with creating a 
+      3d product viewer, allowing users to see the different color combinations,
+      patterns, textures - All on a 3d boat model.
+    
+      <br /><br />
+
+      This was my first time working with <a href="https://threejs.org/">ThreeJS</a>,
+      and 3d-models on-the-web. Needless to say, it was a very educational experience.
+
+      <br /><br />
+
+      The biggest hurdle in this project was definitely prepping the 3d-models in a
+      way that would work well with ThreeJS. There was a lot of trial and error,
+      testing, and breaking everything - But eventually I found a reliable pipeline.
+      
+    `,
+    images: ['/gatorstep/1.png']
   }
 ];
 
