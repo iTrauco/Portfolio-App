@@ -33,7 +33,7 @@ class Project extends Component {
 
         {/* The Images */}
         <div className="image-container">
-          <img src={this.state.images[0]} />;
+          <img src={this.state.images[0]} />
         </div>
       </div>
     );
