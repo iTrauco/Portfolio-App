@@ -59,6 +59,29 @@ var projects = [
       Wordpress & SMTP.
     `,
     images: ['/canby-ed-foundation/1.png', '/canby-ed-foundation/2.png']
+  },
+  {
+    name: 'My Portfolio',
+    link: 'https://github.com/quangogage/Portfolio-App',
+    description: `
+      Yes! I am talking about this site. Working on it has been a ton of fun
+      and I've learned a lot. Most of my time working on this site has been
+      spent designing and making sure everything feels right.
+
+      <br /><br />
+
+      This site is a React app - I decided to use React becuase I knew I wanted
+      it to have that single-page-application feel - And it is a technology that
+      I am constantly trying to improve with.
+
+      Overall, I would have to say the biggest takeaway from my time working on
+      this website has to be the use of canvas. The header has a canvas, there's a
+      canvas in the body of the page, and there's another canvas towards the bottom
+      in the "Contact Me" section. That is a lot for one page to handle, I've had to
+      take every step possible to optimize these canvases and maintain peak 
+      performance.
+    `,
+    images: ['/portfolio/1.png']
   }
 ];
 
