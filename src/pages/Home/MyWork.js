@@ -10,7 +10,7 @@ class MyWork extends Component {
       <div className="MyWork">
         <div className="content">
           <div className="title">
-            <img className="title-ribbon" src={ribbon} />
+            <img className="title-ribbon" src={ribbon} alt="" />
             My Work:
           </div>
           <div className="project-container">
