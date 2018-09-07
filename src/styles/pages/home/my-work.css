@@ -36,6 +36,27 @@
   transform: translateX(-50%) translateY(-64%);
   z-index: -1;
   image-rendering: pixelated;
+
+  /* Animation Defaults */
+  opacity: 0;
+  transform: translateX(-50%) translateY(-64%) scale(0.5);
+  transition: 0.2s;
+}
+.MyWork .title.anim .title-ribbon {
+  transform: translateX(-50%) translateY(-64%) scale(1);
+  opacity: 1;
+}
+
+.MyWork .title .text {
+  /* Animation Defaults */
+  transform: scale(0.5);
+  opacity: 0;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+}
+.MyWork .title.anim .text {
+  transform: scale(1);
+  opacity: 1;
 }
 
 /* The Projects */
