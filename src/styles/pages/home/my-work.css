@@ -37,3 +37,8 @@
   margin-top: 10px;
   opacity: 0.5;
 }
+
+/* The Projects */
+.MyWork .project-container {
+  margin-top: 50px;
+}
