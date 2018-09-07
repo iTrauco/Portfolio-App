@@ -65,7 +65,6 @@ export default class MyDesign extends Component {
   }
 
   render() {
-    console.log(this.state.isScrolledOver);
     return (
       <div className="MyDesign anim-on-scroll">
         <div className="content">
