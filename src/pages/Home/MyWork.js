@@ -13,6 +13,8 @@ class MyWork extends Component {
             {projects.map((project, index) => {
               return (
                 <Project
+                  key={index}
+                  index={index}
                   name={project.name}
                   description={project.description}
                   images={project.images}
@@ -43,6 +45,8 @@ var projects = [
       using a custom-made CMS, everything worked fine but it wasn't quite
       as flexible as they wanted - So I was tasked with recreating the site
       from scratch in wordpress.
+      
+      <br /><br />
 
       This project was a lot of fun. I used the
       <a href="https://www.advancedcustomfields.com/" target="_blank">

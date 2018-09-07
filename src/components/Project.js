@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ribbon from '../assets/images/ribbon-3.png';
 import '../styles/components/project.css';
+import $ from 'jquery';
 
 class Project extends Component {
   constructor(options) {
@@ -12,6 +13,9 @@ class Project extends Component {
   componentDidMount() {
     // Load the images
     this.loadImages();
+
+    // Inject the description markup
+    this.injectDescription();
   }
 
   render() {
@@ -23,7 +27,7 @@ class Project extends Component {
             <img className="ribbon" src={ribbon} />
             {this.props.name}
           </div>
-          <div className="description">{this.props.description}</div>
+          <div className="description" />
         </div>
         <div className="line" />
 
@@ -51,6 +55,13 @@ class Project extends Component {
     this.setState({
       images: images
     });
+  }
+
+  // Inject the description markup into the dom
+  injectDescription() {
+    $(`.Project:eq(${this.props.index}) .description`).html(
+      this.props.description
+    );
   }
 }
 
