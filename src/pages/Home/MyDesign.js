@@ -28,6 +28,9 @@ export default class MyDesign extends Component {
       });
     }
 
+    // Check scroll on mounting
+    this.checkScroll(this.props.scrollY);
+
     /* Disabled for now... not sure how I feel about it.
     new CanvasWavy({
       canvas: $('.canvas-2'),
@@ -51,7 +54,12 @@ export default class MyDesign extends Component {
       var scrollable = this.scrollableElements[i];
       if (scrollY + window.innerHeight * 0.66 >= scrollable.y) {
         scrollable.el.addClass('anim');
-        this.setState({ isScrolledOver: true });
+
+        // Set the scroll-over state to true if it isn't
+        // currently.
+        if (!this.state.isScrolledOver) {
+          this.setState({ isScrolledOver: true });
+        }
       }
     }
   }
