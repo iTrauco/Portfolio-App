@@ -74,6 +74,8 @@ var projects = [
       it to have that single-page-application feel - And it is a technology that
       I am constantly trying to improve with.
 
+      <br /><br />
+      
       Overall, I would have to say the biggest takeaway from my time working on
       this website has to be the use of canvas. The header has a canvas, there's a
       canvas in the body of the page, and there's another canvas towards the bottom
