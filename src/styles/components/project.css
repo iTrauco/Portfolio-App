@@ -11,6 +11,7 @@
   justify-content: center;
   width: 48%;
 }
+
 .Project .name {
   position: relative;
   font-family: Fredoka;
@@ -30,6 +31,7 @@
   background: white;
   margin-top: 5px;
 }
+
 .Project .name .ribbon {
   position: absolute;
   width: 75%;
@@ -40,6 +42,7 @@
   z-index: -1;
   image-rendering: pixelated;
 }
+
 .Project .description {
   font-family: Roboto-Thin;
   font-size: 16px;
@@ -49,7 +52,8 @@
   border-radius: 5px;
   box-shadow: 5px 5px #d46552;
 }
-.Project a {
+
+.Project .text-container a {
   position: relative;
   display: inline-block;
   color: white;
@@ -60,7 +64,7 @@
   z-index: 1;
   background: RGBA(255, 255, 255, 0.1);
 }
-.Project a::after {
+.Project .text-container a::after {
   content: '';
   display: block;
   position: absolute;
@@ -69,12 +73,25 @@
   width: 0%;
   height: 100%;
   transform: translateX(-50%);
-  background: #f47761;
+  background: #737cd8;
   z-index: -1;
   transition: 0.1s;
 }
-.Project a:hover::after {
+.Project .text-container a:hover::after {
   width: 101%;
+}
+
+.Project .link {
+  align-self: flex-end;
+  margin-top: 20px;
+  font-family: Roboto-Thin;
+  font-size: 17px;
+  color: white;
+  text-decoration: none;
+}
+.Project .link::after {
+  content: '';
+  display: none !important;
 }
 
 /* The Seperating Line */

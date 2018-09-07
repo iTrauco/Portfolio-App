@@ -16,6 +16,7 @@ class MyWork extends Component {
                   key={index}
                   index={index}
                   name={project.name}
+                  link={project.link}
                   description={project.description}
                   images={project.images}
                 />
@@ -39,12 +40,13 @@ class MyWork extends Component {
 var projects = [
   {
     name: 'Canby Ed Foundation',
+    link: 'https://canbyedfoundation.org/',
     description: `
       The Canby Educational Foundation is an organization that supplies
       grants to local schools. Their previous website was built with React,
       using a custom-made CMS, everything worked fine but it wasn't quite
       as flexible as they wanted - So I was tasked with recreating the site
-      from scratch in wordpress.
+      from scratch in Wordpress.
       
       <br /><br />
 

@@ -28,12 +28,17 @@ class Project extends Component {
             {this.props.name}
           </div>
           <div className="description" />
+          <a className="link" href={this.props.link}>
+            {this.props.link}
+          </a>
         </div>
         <div className="line" />
 
         {/* The Images */}
         <div className="image-container">
-          <img src={this.state.images[0]} />
+          <a href={this.props.link}>
+            <img src={this.state.images[0]} />
+          </a>
         </div>
       </div>
     );
