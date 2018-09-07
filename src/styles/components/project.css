@@ -44,6 +44,10 @@
   font-family: Roboto-Thin;
   font-size: 16px;
   color: white;
+  background: #f47761;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 5px 5px #d46552;
 }
 .Project a {
   position: relative;
@@ -79,6 +83,7 @@
   margin: 0px 2%;
   width: 1px;
   height: 450px;
+  opacity: 0.4;
 }
 
 /* The Images */
