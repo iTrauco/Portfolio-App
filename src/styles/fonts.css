@@ -36,3 +36,7 @@
   font-family: Concert;
   src: url('../fonts/ConcertOne-Regular.ttf');
 }
+@font-face {
+  font-family: ribbons;
+  src: url('../fonts/ribbons.ttf');
+}

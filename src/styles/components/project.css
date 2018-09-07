@@ -1,0 +1,68 @@
+.Project {
+  position: relative;
+  display: flex;
+}
+
+/* The Text */
+.Project .text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 48%;
+}
+.Project .name {
+  position: relative;
+  font-family: Fredoka;
+  font-size: 45px;
+  color: white;
+  text-shadow: 1px 1px #f47761, 2px 2px #f47761, 3px 3px #f47761,
+    4px 4px #f47761;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  z-index: 1;
+}
+.Project .name::after {
+  content: '';
+  display: block;
+  width: 100%;
+
+  background: white;
+  margin-top: 5px;
+}
+.Project .name .ribbon {
+  position: absolute;
+  width: 75%;
+  height: 90%;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-60%);
+  z-index: -1;
+  image-rendering: pixelated;
+}
+.Project .description {
+  font-family: Roboto-Thin;
+  font-size: 16px;
+  color: white;
+}
+
+/* The Seperating Line */
+.Project .line {
+  background: white;
+  margin: 0px 2%;
+  width: 1px;
+  height: 450px;
+}
+
+/* The Images */
+.Project .image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 48%;
+}
+.Project .image-container img {
+  width: 100%;
+  margin: auto;
+}

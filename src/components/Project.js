@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ribbon from '../assets/images/ribbon-3.png';
 import '../styles/components/project.css';
 
 class Project extends Component {
@@ -18,16 +19,17 @@ class Project extends Component {
       <div className="Project">
         {/* The Text */}
         <div className="text-container">
-          <div className="name">{this.props.name}</div>
+          <div className="name">
+            <img className="ribbon" src={ribbon} />
+            {this.props.name}
+          </div>
           <div className="description">{this.props.description}</div>
         </div>
         <div className="line" />
 
         {/* The Images */}
         <div className="image-container">
-          {this.state.images.map((image, key) => {
-            return <img src={image} />;
-          })}
+          <img src={this.state.images[0]} />;
         </div>
       </div>
     );
