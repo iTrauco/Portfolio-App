@@ -1,7 +1,7 @@
 .Project {
   position: relative;
   display: flex;
-  margin: 50px 0px;
+  margin: 100px 0px;
 }
 .Project:nth-child(even) {
   flex-direction: row-reverse;
