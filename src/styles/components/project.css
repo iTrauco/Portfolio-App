@@ -150,10 +150,19 @@
 
 /* The Seperating Line */
 .Project .line {
+  position: relative;
   background: white;
   margin: 0px 4%;
   width: 1px;
   height: 450px;
+  opacity: 0.4;
+
+  /* Animation Defaults */
+  opacity: 0;
+  transition: 0.35s;
+  transition-delay: 0.65s;
+}
+.Project.anim .line {
   opacity: 0.4;
 }
 
