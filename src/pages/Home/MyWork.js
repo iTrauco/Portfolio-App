@@ -25,7 +25,7 @@ class MyWork extends Component {
   checkScroll(scrollY) {
     for (var i = 0; i < this.scrollableElements.length; i++) {
       var scrollable = this.scrollableElements[i];
-      if (scrollY + window.innerHeight * 0.66 >= scrollable.y) {
+      if (scrollY + window.innerHeight * 0.7 >= scrollable.y) {
         scrollable.el.addClass('anim');
       }
     }
