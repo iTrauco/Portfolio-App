@@ -123,7 +123,7 @@ var projects = [
 
       <br /><br />
 
-      This site is a React app - I decided to use React becuase I knew I wanted
+      This site is a React app - I decided to use React because I knew I wanted
       it to have that single-page-application feel - And it is a technology that
       I am constantly trying to improve with.
 
