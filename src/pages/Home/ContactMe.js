@@ -6,13 +6,13 @@ import Ballpit from '../../components/Ballpit';
 class ContactMe extends Component {
   componentDidMount() {
     // Anim on scroll
-    var els = $('.ContactMe .anim-on-scroll');
+    var els = $('.ContactMe');
     this.scrollableElements = [];
     for (var i = 0; i < els.length; i++) {
       var el = els.eq(i);
       this.scrollableElements.push({
         el: el,
-        y: el.offset().top + el.height()
+        y: el.offset().top + el.height() / 2
       });
     }
 
@@ -31,7 +31,7 @@ class ContactMe extends Component {
   checkScroll(scrollY) {
     for (var i = 0; i < this.scrollableElements.length; i++) {
       var scrollable = this.scrollableElements[i];
-      if (scrollY + window.innerHeight >= scrollable.y) {
+      if (scrollY + window.innerHeight * 0.66 >= scrollable.y) {
         scrollable.el.addClass('anim');
       }
     }
