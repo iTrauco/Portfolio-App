@@ -70,6 +70,7 @@
 }
 
 .Project .description {
+  position: relative;
   font-family: Roboto-Thin;
   font-size: 16px;
   color: white;
@@ -78,9 +79,19 @@
   border-radius: 5px;
   box-shadow: 7px 7px #d46552;
   line-height: 20px;
+
+  /* Animation Defaults */
+  opacity: 0;
+  left: -35px;
+  transition: 0.325s;
+  transition-delay: 0.35s;
+}
+.Project.anim .description {
+  opacity: 1;
+  left: 0;
 }
 
-.Project .text-container a {
+.Project .text-container .description a {
   position: relative;
   display: inline-block;
   color: white;
@@ -91,7 +102,7 @@
   z-index: 1;
   background: RGBA(255, 255, 255, 0.1);
 }
-.Project .text-container a::after {
+.Project .text-container .description a::after {
   content: '';
   display: block;
   position: absolute;
@@ -104,17 +115,26 @@
   z-index: -1;
   transition: 0.1s;
 }
-.Project .text-container a:hover::after {
+.Project .text-container .description a:hover::after {
   width: 101%;
 }
 
 .Project .link {
+  position: relative;
   align-self: flex-end;
   margin-top: 20px;
   font-family: Roboto-Thin;
   font-size: 17px;
   color: white;
   text-decoration: none;
+  padding: 0px 5px;
+  background: RGBA(255, 255, 255, 0.1);
+
+  /* Animation Defaults */
+  opacity: 0;
+  top: 15px;
+  transition: 0.35s;
+  transition-delay: 0.5s;
 }
 .Project .link::after {
   content: '';
@@ -122,6 +142,10 @@
 }
 .Project:nth-child(even) .link {
   align-self: flex-start;
+}
+.Project.anim .link {
+  top: 0;
+  opacity: 1;
 }
 
 /* The Seperating Line */
@@ -142,7 +166,18 @@
   width: 46%;
 }
 .Project .image-container img {
+  position: relative;
   width: 100%;
   margin: auto;
   box-shadow: 0px 0px 10px RGBA(50, 50, 50, 0.3);
+
+  /* Animation Defaults */
+  opacity: 0;
+  left: 25px;
+  transition: 0.4s;
+  transition-delay: 0.7s;
+}
+.Project.anim .image-container img {
+  opacity: 1;
+  left: 0px;
 }
