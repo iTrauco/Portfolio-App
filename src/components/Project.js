@@ -25,7 +25,7 @@ class Project extends Component {
         <div className="text-container">
           <div className="name">
             <img className="ribbon" src={ribbon} alt="" />
-            {this.props.name}
+            <div className="text">{this.props.name}</div>
           </div>
           <div className="description" />
           <a className="link" href={this.props.link} target="_blank">
