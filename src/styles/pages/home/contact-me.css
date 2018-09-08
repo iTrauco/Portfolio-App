@@ -29,7 +29,7 @@
   transform: translateY(-50px);
   transition: 1s;
 }
-.ContactMe .title.anim {
+.ContactMe.anim .title {
   opacity: 1;
   transform: translateY(0px);
 }
@@ -49,7 +49,7 @@
   transition: 0.8s;
   transition-delay: 0.25s;
 }
-.ContactMe .line.anim {
+.ContactMe.anim .line {
   width: 250px;
 }
 
@@ -67,7 +67,7 @@
   transition: 0.5s;
   transition-delay: 0.5s;
 }
-.ContactMe .sub-text.anim {
+.ContactMe.anim .sub-text {
   opacity: 1;
   transform: translateY(0px);
 }
@@ -93,11 +93,12 @@
   opacity: 0;
   transform: translateX(25px);
   transition: 0.5s;
+  transition-delay: 0.75s;
 }
 .ContactMe .email:hover {
   cursor: pointer;
 }
-.ContactMe .contact-container.anim .email {
+.ContactMe.anim .contact-container .email {
   opacity: 1;
   transform: translateX(0px);
 }
@@ -109,6 +110,14 @@
   height: 75px;
   margin: 0px 59px;
   background: white;
+
+  /* Animation Defaults */
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 0.4s;
+}
+.ContactMe.anim .bar {
+  opacity: 1;
 }
 
 .ContactMe .button-container {
@@ -122,8 +131,9 @@
   opacity: 0;
   transform: translateX(-25px);
   transition: 0.5s;
+  transition-delay: 0.75s;
 }
-.ContactMe .contact-container.anim .button-container {
+.ContactMe.anim .contact-container .button-container {
   opacity: 1;
   transform: translateX(0px);
 }
