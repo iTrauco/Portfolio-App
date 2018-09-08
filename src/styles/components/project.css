@@ -45,6 +45,28 @@
   transform: translateY(-60%);
   z-index: -1;
   image-rendering: pixelated;
+
+  /* Animation Defaults */
+  opacity: 0;
+  left: 50px;
+  transition: 0.4s;
+}
+.Project.anim .name .ribbon {
+  opacity: 1;
+  left: -15px;
+}
+
+.Project .name .text {
+  /* Animation Defaults */
+  position: relative;
+  left: 50px;
+  opacity: 0;
+  transition: 0.3s;
+  transition-delay: 0.25s;
+}
+.Project.anim .name .text {
+  left: 0px;
+  opacity: 1;
 }
 
 .Project .description {
