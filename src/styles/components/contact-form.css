@@ -7,7 +7,7 @@
   overflow-x: hidden;
   z-index: 11;
   opacity: 0;
-  background: RGBA(0, 0, 0, 0.5);
+  background: RGBA(0, 0, 0, 0.735);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,13 +46,16 @@
   border: 3px solid #f47761;
   border-radius: 3px;
   font-size: 17px;
-  padding: 5px 10px;
+  padding: 8px 10px;
   resize: none;
   margin-bottom: 15px;
   min-width: 450px;
 }
 .ContactForm textarea {
   min-height: 150px;
+}
+.ContactForm .error {
+  border: 3px solid red;
 }
 
 .ContactForm .button {
