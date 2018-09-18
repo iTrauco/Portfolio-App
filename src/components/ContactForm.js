@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import '../styles/components/contact-form.css';
 
-var clientId =
-  '154297183854-1kdblgdhdng42fpgdddlbf8463bp03g0.apps.googleusercontent.com';
-var clientSecret = 'axbaIe__gwNnZpwi0cvyP9Ix';
-var apiKey = 'AIzaSyD5yw1kMHQDsIEO0Vewjz8hm_FCi77-95I';
-
 class ContactForm extends Component {
+  componentDidMount() {}
   render() {
     return (
       <div className="ContactForm">
@@ -23,7 +19,9 @@ class ContactForm extends Component {
 
           <textarea id="contact-message" placeholder="Say hi!" />
 
-          <div className="button">Send</div>
+          <div className="button" onClick={this.sendMessage.bind(this)}>
+            Send
+          </div>
         </div>
       </div>
     );
@@ -37,6 +35,10 @@ class ContactForm extends Component {
   close() {
     $('.ContactForm').removeClass('open');
     $('body').css('overflow-y', 'auto');
+  }
+
+  sendMessage() {
+    this.props.socket.emit('email', { message: 'Hello friend!' });
   }
 }
 

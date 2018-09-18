@@ -40,7 +40,7 @@ class Home extends Component {
         {this.state.showPage && (
           <div>
             <LinkMenu openContactForm={this.openContactForm.bind(this)} />
-            <ContactForm ref={this.contactForm} />
+            <ContactForm ref={this.contactForm} socket={this.props.socket} />
             <Message ref={this.message} />
             <HomeHeader isShown={this.state.showPage} />
             <HomeBody

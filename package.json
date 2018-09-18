@@ -4,12 +4,21 @@
   "private": true,
   "homepage": "https://quangogage.github.io/Portfolio-App",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
     "jquery": "^3.3.1",
+    "morgan": "^1.9.1",
+    "nodemailer": "^4.6.8",
     "parallax-js": "^3.1.0",
+    "path": "^0.12.7",
+    "pm2": "^3.1.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-mt-svg-lines": "^0.8.5",
     "react-scripts": "1.1.4",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
     "vis": "^4.21.0"
   },
   "scripts": {
@@ -18,7 +27,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prod-server": "pm2 start server.js",
+    "dev-server": "pm2-dev start server.js",
+    "stop-server": "pm2 stop server.js"
   },
   "devDependencies": {
     "gh-pages": "^1.2.0",
