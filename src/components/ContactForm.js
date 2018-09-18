@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import '../styles/components/contact-form.css';
 
+var clientId =
+  '154297183854-1kdblgdhdng42fpgdddlbf8463bp03g0.apps.googleusercontent.com';
+var clientSecret = 'axbaIe__gwNnZpwi0cvyP9Ix';
+var apiKey = 'AIzaSyD5yw1kMHQDsIEO0Vewjz8hm_FCi77-95I';
+
 class ContactForm extends Component {
   render() {
     return (
