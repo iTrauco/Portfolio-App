@@ -71,8 +71,14 @@ class ContactForm extends Component {
       $('#contact-message').addClass('error');
     }
 
+    // If everything checks out, send that ish!
     if (emailIsValid != false && messageIsValid != false) {
       this.sendMessage();
+
+      this.setState({
+        email: '',
+        message: ''
+      });
     }
   }
 
