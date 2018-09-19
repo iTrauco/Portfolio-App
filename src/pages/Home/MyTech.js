@@ -132,6 +132,7 @@ export default class MyTech extends Component {
     var container = $('.vis-container')[0];
 
     var network = new vis.Network(container, data, options);
+    $(window).on('resize', network.fit);
     network.moveNode(1, window.innerWidth * 0.7, null);
 
     // Scaling the network
