@@ -23,8 +23,5 @@ elif [ $script == "ship" ] ; then
     echo "Shipping to production...";
     ssh root@192.241.229.157 " \
     cd Portfolio-App && \
-    git pull origin master \
-    npm run stop-server \
-    npm run prod-server
-    "
+    git pull origin master"
 fi
