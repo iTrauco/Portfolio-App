@@ -21,7 +21,8 @@ class ContactMe extends Component {
       this.ballPit = new Ballpit({
         canvas: $('#Ballpit'),
         width: $('.ContactMe').innerWidth(),
-        height: $('.ContactMe').innerHeight()
+        height: $('.ContactMe').innerHeight(),
+        parentElement: $('.ContactMe')
       });
     }, 500);
   }
