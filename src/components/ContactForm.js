@@ -18,7 +18,9 @@ class ContactForm extends Component {
         <div className="window">
           <div className="click-to-close" onClick={this.close.bind(this)} />
 
-          <div class={'form-state' + (this.state.sentMessage ? ' hidden' : '')}>
+          <div
+            className={'form-state' + (this.state.sentMessage ? ' hidden' : '')}
+          >
             <div className="title">Contact Me:</div>
 
             <input
@@ -42,7 +44,9 @@ class ContactForm extends Component {
           </div>
 
           <div
-            class={'complete-state' + (this.state.sentMessage ? '' : ' hidden')}
+            className={
+              'complete-state' + (this.state.sentMessage ? '' : ' hidden')
+            }
           >
             <div className="title complete">Message sent!</div>
             <div className="button" onClick={this.close.bind(this)}>
