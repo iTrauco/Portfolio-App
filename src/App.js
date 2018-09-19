@@ -9,7 +9,7 @@ class App extends Component {
   constructor(options) {
     super(options);
 
-    this.socket = io.connect('http://192.241.229.157:3001');
+    this.socket = io.connect('http://localhost:3001');
   }
 
   render() {
