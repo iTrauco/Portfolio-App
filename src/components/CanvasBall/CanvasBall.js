@@ -18,6 +18,7 @@ export default class CanvasBall {
 
     this.c.canvas.width = this.container.width();
     this.c.canvas.height = this.container.height();
+    $(window).on('resize', this.handleResize.bind(this));
 
     this.balls = [];
     this.generateBalls();
@@ -124,5 +125,23 @@ export default class CanvasBall {
     } else {
       return true;
     }
+  }
+
+  // What to do when the window is resized
+  handleResize() {
+    // Reset canvas dimensions
+    this.c.canvas.width = this.container.width();
+    this.c.canvas.height = this.container.height();
+
+    // Reset all balls
+    this.balls = [];
+    this.generateBalls();
+
+    // Reset mouse data
+    this.mouse = {
+      x: this.c.canvas.width / 2,
+      y: this.c.canvas.height / 2,
+      hasMoved: false
+    };
   }
 }
