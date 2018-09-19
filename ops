@@ -24,7 +24,7 @@ elif [ $script == "ship" ] ; then
     ssh root@192.241.229.157 " \
     cd Portfolio-App && \
     git pull origin master \
-    forever stop api.js \
-    forever start api.js
+    npm run stop-server \
+    npm run prod-server
     "
 fi
