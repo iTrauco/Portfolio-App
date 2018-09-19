@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# These commands take this form
+# ./ops [script] [option]
+
+script=${1}
+option=${2}
+
+if [ -z $script ] ; then
+  echo "please enter a command after ./ops"
+
+elif [ $script == "start" ] ; then
+  docker-compose -f docker/dev.yml up
+
+elif [ $script == "stop" ] ; then
+  docker-compose -f docker/dev.yml down
+elif [ $script == "commitship" ] ; then
+  git add .
+  git commit -m "$2"
+  git push origin master
+  ./ops ship
+elif [ $script == "ship" ] ; then
+  if [ "$option" == "stage" ] ; then
+    echo "shipping $option"
+    ssh root@dev.canbyedfoundation.org "cd canbyedfoundation && git pull origin master"
+  elif [ "$option" == "prod" ] ; then
+      echo "shipping $option"
+      ssh root@107.170.240.75 "cd canbyedfoundation && git pull origin master"
+  else
+      echo "please enter an environment after ./ops ship [stage | prod]"
+  fi
+fi
