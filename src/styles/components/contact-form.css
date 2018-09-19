@@ -26,11 +26,21 @@
   z-index: -1;
 }
 
-.ContactForm .window {
+.ContactForm .form-state {
   display: flex;
   flex-direction: column;
   background: #6177f4;
   padding: 15px 50px;
+}
+.ContactForm .complete-state {
+  display: flex;
+  flex-direction: column;
+  background: #6177f4;
+  padding: 15px 50px;
+  min-width: 250px;
+  min-height: 250px;
+  justify-content: center;
+  align-items: center;
 }
 
 .ContactForm .title {
@@ -38,6 +48,11 @@
   color: white;
   font-size: 35px;
   margin-bottom: 15px;
+}
+.ContactForm .title.complete {
+  text-shadow: 1px 1px #f47761, 2px 2px #f47761, 3px 3px #f47761,
+    4px 4px #f47761, 5px 5px #f47761, 6px 6px #f47761, 7px 7px #f47761,
+    8px 8px #f47761, 9px 9px #f47761;
 }
 
 .ContactForm input,
@@ -76,4 +91,9 @@
   cursor: pointer;
   background: #f47761;
   color: white;
+}
+
+/* Hiding stuff - sshh! */
+.ContactForm .hidden {
+  display: none;
 }
