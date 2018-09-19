@@ -13,8 +13,10 @@
 
 .TypeEffect .dialog-text {
   font-family: Roboto-Mono;
-  font-size: 2.5vw;
+  font-size: 43px;
   color: #98a0ff;
+  width: 80%;
+  text-align: center;
 }
 
 /* The Cursor */
@@ -24,8 +26,8 @@
   position: relative;
   background: #98a0ff;
   width: 2px;
-  height: 2.5vw;
-  top: -1.25vw;
+  height: 2ex;
+  top: -0.7ex;
   transform: translateY(50%);
 
   animation: cursorAnim 0.25s linear 0s infinite normal;

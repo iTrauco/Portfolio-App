@@ -86,6 +86,9 @@ class Home extends Component {
       // Display the page
       this.state.showPage = true;
 
+      // TESTING TESTING 123
+      this.state.showPage = false;
+
       // Fade in
       $('.Home').addClass('anim');
     } else {
