@@ -8,7 +8,8 @@ class ContactForm extends Component {
 
     this.state = {
       email: '',
-      message: ''
+      message: '',
+      sentMessage: true
     };
   }
   render() {
@@ -16,25 +17,37 @@ class ContactForm extends Component {
       <div className="ContactForm">
         <div className="window">
           <div className="click-to-close" onClick={this.close.bind(this)} />
-          <div className="title">Contact Me:</div>
 
-          <input
-            type="text"
-            id="contact-email"
-            placeholder="Your Email Address."
-            onChange={this.onEmailChange.bind(this)}
-            value={this.state.email}
-          />
+          <div class={'form-state' + (this.state.sentMessage ? ' hidden' : '')}>
+            <div className="title">Contact Me:</div>
 
-          <textarea
-            id="contact-message"
-            placeholder="Say hi!"
-            onChange={this.onMessageChange.bind(this)}
-            value={this.state.message}
-          />
+            <input
+              type="text"
+              id="contact-email"
+              placeholder="Your Email Address."
+              onChange={this.onEmailChange.bind(this)}
+              value={this.state.email}
+            />
 
-          <div className="button" onClick={this.tryToSend.bind(this)}>
-            Send
+            <textarea
+              id="contact-message"
+              placeholder="Say hi!"
+              onChange={this.onMessageChange.bind(this)}
+              value={this.state.message}
+            />
+
+            <div className="button" onClick={this.tryToSend.bind(this)}>
+              Send
+            </div>
+          </div>
+
+          <div
+            class={'complete-state' + (this.state.sentMessage ? '' : ' hidden')}
+          >
+            <div className="title complete">Message sent!</div>
+            <div className="button" onClick={this.close.bind(this)}>
+              Close Window
+            </div>
           </div>
         </div>
       </div>
@@ -51,6 +64,7 @@ class ContactForm extends Component {
   close() {
     $('.ContactForm').removeClass('open');
     $('body').css('overflow-y', 'auto');
+    this.setState({ sentMessage: false });
   }
 
   // Make sure everything checks out before sending the
@@ -77,13 +91,15 @@ class ContactForm extends Component {
 
       this.setState({
         email: '',
-        message: ''
+        message: '',
+        sentMessage: true
       });
     }
   }
 
   // Actually send the message to the API (then to my email:)
   sendMessage() {
+    // Send to api
     this.props.socket.emit('email', {
       email: this.state.email,
       message: this.state.message
