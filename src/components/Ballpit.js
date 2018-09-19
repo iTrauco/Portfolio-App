@@ -18,9 +18,19 @@ export default class Ballpit {
     this.c = this.canvas[0].getContext('2d');
 
     // Dimensions
-    this.width = options.width;
-    this.height = options.height;
-    this.setDimensions(options.width, options.height);
+    this.parentElement = options.parentElement;
+    this.width = this.parentElement.innerWidth();
+    this.height = this.parentElement.innerHeight();
+    this.setDimensions(this.width, this.height);
+    $(window).on(
+      'resize',
+      function() {
+        this.setDimensions(
+          this.parentElement.innerWidth(),
+          this.parentElement.innerHeight()
+        );
+      }.bind(this)
+    );
 
     // The balls
     this.balls = [];
