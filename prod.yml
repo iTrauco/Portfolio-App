@@ -3,7 +3,9 @@ version: '3.5'
 services:
   server:
     container_name: server
-    build: './api.js'
+    build:
+      context: .
+      dockerfile: dockerfileserver
     expose:
       - '3001'
     volumes:
