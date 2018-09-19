@@ -9,7 +9,7 @@ class ContactForm extends Component {
     this.state = {
       email: '',
       message: '',
-      sentMessage: true
+      sentMessage: false
     };
   }
   render() {
