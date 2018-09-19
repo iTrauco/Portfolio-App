@@ -3,7 +3,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var nodemailer = require('nodemailer');
 
-server.listen(process.env.PORT || 3001);
+server.listen(3001);
 // WARNING: app.listen(80) will NOT work here!
 
 // Default message if you visit the API URL

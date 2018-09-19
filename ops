@@ -21,5 +21,10 @@ elif [ $script == "commitship" ] ; then
   ./ops ship
 elif [ $script == "ship" ] ; then
     echo "Shipping to production...";
-    ssh root@192.241.229.157 "cd Portfolio-App && git pull origin master"
+    ssh root@192.241.229.157 " \
+    cd Portfolio-App && \
+    git pull origin master \
+    forever stop api.js \
+    forever start api.js
+    "
 fi
