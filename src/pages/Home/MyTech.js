@@ -8,6 +8,18 @@ export default class MyTech extends Component {
     super(options);
   }
   componentDidMount() {
+    // Anim on scroll
+    var els = $('.MyTech');
+    this.scrollableElements = [];
+    for (var i = 0; i < els.length; i++) {
+      var el = els.eq(i);
+
+      this.scrollableElements.push({
+        el: el,
+        y: el.offset().top + el.height() * 0.5
+      });
+    }
+
     if (this.props.isTouchDevice) {
     } else {
       // Create the vis network
@@ -276,17 +288,5 @@ export default class MyTech extends Component {
         scale: 0.45
       });
     };
-
-    // Anim on scroll
-    var els = $('.MyTech');
-    this.scrollableElements = [];
-    for (var i = 0; i < els.length; i++) {
-      var el = els.eq(i);
-
-      this.scrollableElements.push({
-        el: el,
-        y: el.offset().top + el.height() * 0.5
-      });
-    }
   }
 }
