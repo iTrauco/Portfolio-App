@@ -206,7 +206,7 @@
 /* Switch to columns */
 @media (max-width: 1000px) {
   .MyTech {
-    height: 1200px;
+    height: 900px;
   }
   .MyTech .text-container {
     position: relative;
@@ -218,11 +218,30 @@
     width: 80%;
     margin: auto;
   }
+
+  .MyTech .sub-text {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 15px;
+  }
+
   .MyTech .tech-list-container {
     position: relative;
     top: 100px;
     width: 80%;
     left: 50%;
     transform: translateX(-50%);
+  }
+  .MyTech .header {
+    font-size: 27px;
+  }
+  .MyTech .item {
+    font-size: 18px;
+  }
+}
+@media (max-width: 580px) {
+  .MyTech .title {
+    font-size: 8vw;
   }
 }
