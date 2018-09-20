@@ -66,6 +66,42 @@
   opacity: 0;
 }
 
+.MyTech .tech-list-container {
+  position: absolute;
+  left: 54%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  border: 2px solid #f47761;
+  box-shadow: 1px 1px #f47761, 2px 2px #f47761, 3px 3px #f47761, 4px 4px #f47761,
+    5px 5px #f47761, 6px 6px #f47761, 7px 7px #f47761, 8px 8px #f47761,
+    9px 9px #f47761;
+  border-radius: 3px;
+  padding: 10px;
+}
+.MyTech .header {
+  font-family: Roboto-Mono;
+  font-size: 30px;
+  color: white;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+.MyTech .item {
+  font-family: Roboto-Thin;
+  font-size: 25px;
+  color: white;
+  margin: 2.5px 0px;
+}
+.MyTech .item::before {
+  content: '•';
+  position: relative;
+  display: inline;
+  margin: 0px 0.2em;
+}
+
 .MyTech .title {
   position: relative;
   font-family: Fredoka;

@@ -8,6 +8,110 @@ export default class MyTech extends Component {
     super(options);
   }
   componentDidMount() {
+    if (this.props.isTouchDevice) {
+    } else {
+      // Create the vis network
+      this.createVisNetwork();
+    }
+  }
+  componentWillReceiveProps(newProps) {
+    this.checkScroll(newProps.scrollY);
+  }
+  checkScroll(scrollY) {
+    for (var i = 0; i < this.scrollableElements.length; i++) {
+      var scrollable = this.scrollableElements[i];
+      if (scrollY + window.innerHeight * 0.66 >= scrollable.y) {
+        scrollable.el.addClass('anim');
+      }
+    }
+  }
+
+  // Resize the vis netwrok
+  resizeNetwork() {
+    if (window.innerWidth < 1000) {
+      this.network.moveNode(
+        1,
+        window.innerWidth * 0.05,
+        $('.vis-container').height() * 0.4
+      );
+    } else {
+      this.network.moveNode(1, window.innerWidth * 0.7, null);
+
+      this.network.moveTo({
+        position: { x: 0, y: 0 },
+        scale: 0.45
+      });
+    }
+  }
+
+  render() {
+    return (
+      <div className="MyTech">
+        <div className="content">
+          {/* The Text */}
+          <div className="text-container">
+            <div className="title">My Proficiencies</div>
+            <div className="sub-text">
+              I am constantly learning and improving my skills with a multitude
+              of web technologies, languages, and libraries. From wordpress to
+              react, the ones shown here I have become expertly capable with.
+              <br />
+              <br />
+              My front end skills span over <b>numerous</b> libraries that I
+              have worked with. My love for design is encouraged through my
+              ability to utilize these to the fullest.
+              <br />
+              <br />
+              On the back end, I consider myself professionally capable with all
+              of the technologies listed, but my true passion lies in the
+              visual, front end side of the web.
+            </div>
+          </div>
+
+          {/* Alternative list of tech */}
+          {/* (Only shown on TOUCH devices) */}
+
+          {this.props.isTouchDevice ? (
+            <div className="tech-list-container">
+              <div className="tech-list">
+                <div className="header">Front End:</div>
+                <div className="item">HTML</div>
+                <div className="item">CSS</div>
+                <div className="item">Javascript</div>
+                <div className="item">React</div>
+                <div className="item">React Native</div>
+                <div className="item">ThreeJS</div>
+                <div className="item">JQuery</div>
+                <div className="item">SCSS</div>
+              </div>
+              <div className="tech-list">
+                <div className="header">Back End</div>
+                <div className="item">Google Firebase</div>
+                <div className="item">PHP</div>
+                <div className="item">Paypal</div>
+                <div className="item">NodeJS</div>
+                <div className="item">ExpressJS</div>
+                <div className="item">Socket.io</div>
+                <div className="item">Wordpress</div>
+              </div>
+            </div>
+          ) : null}
+
+          {/* Instructions for the Vis network */}
+          {/* (Only show on non-touch devices) */}
+          {!this.props.isTouchDevice ? (
+            <div className="instructions">(Click and drag)</div>
+          ) : null}
+        </div>
+        {/* The Vis Network Canvas Container */}
+        {/* (Only show on non-touch devices) */}
+        {!this.props.isTouchDevice ? <div className="vis-container" /> : null}
+      </div>
+    );
+  }
+
+  // Creating the vis network
+  createVisNetwork() {
     var nodes = new vis.DataSet([
       /* Web Dev */
       {
@@ -184,73 +288,5 @@ export default class MyTech extends Component {
         y: el.offset().top + el.height() * 0.5
       });
     }
-
-    if (this.props.isTouchDevice) {
-      alert('This is a touch device');
-    } else {
-      alert('This is not a touch device');
-    }
-  }
-  componentWillReceiveProps(newProps) {
-    this.checkScroll(newProps.scrollY);
-  }
-  checkScroll(scrollY) {
-    for (var i = 0; i < this.scrollableElements.length; i++) {
-      var scrollable = this.scrollableElements[i];
-      if (scrollY + window.innerHeight * 0.66 >= scrollable.y) {
-        scrollable.el.addClass('anim');
-      }
-    }
-  }
-
-  // Resize the vis netwrok
-  resizeNetwork() {
-    if (window.innerWidth < 1000) {
-      this.network.moveNode(
-        1,
-        window.innerWidth * 0.05,
-        $('.vis-container').height() * 0.4
-      );
-    } else {
-      this.network.moveNode(1, window.innerWidth * 0.7, null);
-
-      this.network.moveTo({
-        position: { x: 0, y: 0 },
-        scale: 0.45
-      });
-    }
-  }
-
-  render() {
-    return (
-      <div className="MyTech">
-        <div className="content">
-          {/* The Text */}
-          <div className="text-container">
-            <div className="title">My Proficiencies</div>
-            <div className="sub-text">
-              I am constantly learning and improving my skills with a multitude
-              of web technologies, languages, and libraries. From wordpress to
-              react, the ones shown here I have become expertly capable with.
-              <br />
-              <br />
-              My front end skills span over <b>numerous</b> libraries that I
-              have worked with. My love for design is encouraged through my
-              ability to utilize these to the fullest.
-              <br />
-              <br />
-              On the back end, I consider myself professionally capable with all
-              of the technologies listed, but my true passion lies in the
-              visual, front end side of the web.
-            </div>
-          </div>
-
-          {/* Instructions for the Vis network */}
-          <div className="instructions">(Click and drag)</div>
-        </div>
-        {/* The Vis Network Canvas Container */}
-        <div className="vis-container" />
-      </div>
-    );
   }
 }
