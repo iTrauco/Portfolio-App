@@ -68,7 +68,6 @@ export default class MyDesign extends Component {
     return (
       <div className="MyDesign anim-on-scroll">
         <div className="content">
-          <canvas className="canvas-2" />
           {/* Design Philosophy */}
           <div className="section-title">Design Philosophy</div>
           {this.state.isScrolledOver && (
