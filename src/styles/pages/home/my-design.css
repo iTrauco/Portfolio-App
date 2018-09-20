@@ -143,3 +143,41 @@ canvas {
     opacity: 1;
   }
 }
+
+/* Media Queries */
+@media (max-width: 642px) {
+  .MyDesign .section-title {
+    font-size: 64px;
+  }
+  .MyDesign .svg-container .svg {
+    width: 60px;
+    margin: 0px 40px;
+  }
+  .MyDesign .section-sub-text {
+    font-size: 21px;
+    width: 90%;
+  }
+}
+@media (max-width: 548px) {
+  .MyDesign {
+    padding-top: 75px;
+    padding-bottom: 50px;
+  }
+  .MyDesign .section-title {
+    font-size: 11vw;
+    text-shadow: 1px 1px #f47761, 2px 2px #f47761, 3px 3px #f47761,
+      4px 4px #f47761, 5px 5px #f47761, 6px 6px #f47761, 7px 7px #f47761,
+      8px 8px #f47761, 9px 9px #f47761, 10px 10px #f47761, 11px 11px #f47761;
+  }
+  .MyDesign .svg-container {
+    margin-bottom: 15px;
+  }
+  .MyDesign .svg-container .svg {
+    width: 50px;
+    margin: 0px 25px;
+  }
+  .MyDesign .section-sub-text {
+    font-size: 19px;
+    width: 90%;
+  }
+}
