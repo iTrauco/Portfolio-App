@@ -12,7 +12,10 @@ class HomeBody extends Component {
       <div className="HomeBody">
         {/*<MyServices scrollY={this.props.scrollY} />*/}
         <MyDesign scrollY={this.props.scrollY} />
-        <MyTech scrollY={this.props.scrollY} />
+        <MyTech
+          scrollY={this.props.scrollY}
+          isTouchDevice={this.props.isTouchDevice}
+        />
         <MyWork scrollY={this.props.scrollY} />
         <ContactMe
           scrollY={this.props.scrollY}

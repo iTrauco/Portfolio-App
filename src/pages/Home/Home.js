@@ -47,6 +47,7 @@ class Home extends Component {
               scrollY={this.state.scrollY}
               triggerMessage={this.triggerMessage.bind(this)}
               openContactForm={this.openContactForm.bind(this)}
+              isTouchDevice={this.props.isTouchDevice}
             />
             <HomeFooter />
           </div>

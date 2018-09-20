@@ -184,6 +184,12 @@ export default class MyTech extends Component {
         y: el.offset().top + el.height() * 0.5
       });
     }
+
+    if (this.props.isTouchDevice) {
+      alert('This is a touch device');
+    } else {
+      alert('This is not a touch device');
+    }
   }
   componentWillReceiveProps(newProps) {
     this.checkScroll(newProps.scrollY);
