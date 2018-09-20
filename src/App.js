@@ -10,13 +10,23 @@ class App extends Component {
     super(options);
 
     this.socket = io.connect('http://192.241.229.157:3001');
+    this.touchDevice = this.isTouchDevice();
   }
 
   render() {
     return (
       <div className="App">
-        <Home socket={this.socket} />
+        <Home socket={this.socket} isTouchDevice={this.touchDevice} />
       </div>
+    );
+  }
+
+  // Check if the user is on a touch device
+  isTouchDevice() {
+    return (
+      'ontouchstart' in window ||
+      navigator.MaxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0
     );
   }
 }
