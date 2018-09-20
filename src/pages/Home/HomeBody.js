@@ -4,6 +4,7 @@ import MyTech from './MyTech';
 import MyServices from './MyServices';
 import MyWork from './MyWork';
 import ContactMe from './ContactMe';
+import $ from 'jquery';
 
 class HomeBody extends Component {
   render() {

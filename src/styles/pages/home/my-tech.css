@@ -153,3 +153,29 @@
     opacity: 1;
   }
 }
+
+/* Media Queries */
+@media (max-width: 1300px) {
+  .MyTech .text-container {
+    width: 45%;
+  }
+}
+@media (max-width: 1000px) {
+  .MyTech {
+    height: 1200px;
+  }
+  .MyTech .text-container {
+    position: relative;
+    margin: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: none;
+    padding: 10px 5px;
+    width: 80%;
+    margin: auto;
+  }
+  .MyTech .instructions {
+    right: 50%;
+  }
+}
