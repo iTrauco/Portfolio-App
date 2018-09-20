@@ -20,11 +20,20 @@ export default class MyTech extends Component {
       });
     }
 
-    if (this.props.isTouchDevice) {
-    } else {
+    if (this.shouldShowVisNetwork()) {
       // Create the vis network
       this.createVisNetwork();
     }
+
+    $(window).on(
+      'resize',
+      function() {
+        if (this.shouldShowVisNetwork()) {
+          // Create the vis network
+          this.createVisNetwork();
+        }
+      }.bind(this)
+    );
   }
   componentWillReceiveProps(newProps) {
     this.checkScroll(newProps.scrollY);
@@ -83,7 +92,7 @@ export default class MyTech extends Component {
           {/* Alternative list of tech */}
           {/* (Only shown on TOUCH devices) */}
 
-          {this.props.isTouchDevice ? (
+          {!this.shouldShowVisNetwork() ? (
             <div className="tech-list-container">
               <div className="tech-list">
                 <div className="header">Front End:</div>
@@ -110,16 +119,30 @@ export default class MyTech extends Component {
           ) : null}
 
           {/* Instructions for the Vis network */}
-          {/* (Only show on non-touch devices) */}
-          {!this.props.isTouchDevice ? (
+          {/* (Only show on non-touch devices, or if the screen size is smaller than 1000) */}
+          {this.shouldShowVisNetwork() ? (
             <div className="instructions">(Click and drag)</div>
           ) : null}
         </div>
-        {/* The Vis Network Canvas Container */}
-        {/* (Only show on non-touch devices) */}
-        {!this.props.isTouchDevice ? <div className="vis-container" /> : null}
+
+        {/* The Container for the Vis Network */}
+        {/* (Only show on non-touch devices, or if the screen size is smaller than 1000) */}
+        <div
+          className={
+            'vis-container' + (this.shouldShowVisNetwork() ? '' : ' hidden')
+          }
+        />
       </div>
     );
+  }
+
+  // Check if the vis network should be displayed
+  shouldShowVisNetwork() {
+    if (window.innerWidth > 1000 && !this.props.isTouchDevice) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   // Creating the vis network

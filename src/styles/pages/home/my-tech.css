@@ -5,6 +5,12 @@
   background: #6177f4;
   z-index: 0;
 }
+
+/* Hiding Stuff */
+.MyTech .hidden {
+  display: none;
+}
+
 .MyTech .content {
   position: relative;
   margin: auto;
@@ -196,6 +202,8 @@
     width: 45%;
   }
 }
+
+/* Switch to columns */
 @media (max-width: 1000px) {
   .MyTech {
     height: 1200px;
@@ -204,14 +212,17 @@
     position: relative;
     margin: 0;
     left: 0;
-    right: 0;
-    top: 0;
+    top: 50px;
     transform: none;
     padding: 10px 5px;
     width: 80%;
     margin: auto;
   }
-  .MyTech .instructions {
-    right: 50%;
+  .MyTech .tech-list-container {
+    position: relative;
+    top: 100px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
