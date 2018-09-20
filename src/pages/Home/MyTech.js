@@ -140,17 +140,29 @@ export default class MyTech extends Component {
           window.innerWidth,
           $('.vis-container').height()
         );
+        this.resizeNetwork();
       }.bind(this)
     );
-    network.moveNode(1, window.innerWidth * 0.7, null);
+
+    this.resizeNetwork();
 
     // Scaling the network
-    network.once('afterDrawing', function() {
-      network.moveTo({
-        position: { x: 0, y: 0 },
-        scale: 0.45
-      });
-    });
+    network.once(
+      'afterDrawing',
+      function() {
+        if (window.innerWidth > 800) {
+          this.network.moveTo({
+            position: { x: 0, y: 0 },
+            scale: 0.45
+          });
+        } else {
+          this.network.moveTo({
+            position: { x: 0, y: 0 },
+            scale: 0.35
+          });
+        }
+      }.bind(this)
+    );
 
     // Resizing the network
     window.onresize = function() {
@@ -182,6 +194,24 @@ export default class MyTech extends Component {
       if (scrollY + window.innerHeight * 0.66 >= scrollable.y) {
         scrollable.el.addClass('anim');
       }
+    }
+  }
+
+  // Resize the vis netwrok
+  resizeNetwork() {
+    if (window.innerWidth < 1000) {
+      this.network.moveNode(
+        1,
+        window.innerWidth * 0.05,
+        $('.vis-container').height() * 0.4
+      );
+    } else {
+      this.network.moveNode(1, window.innerWidth * 0.7, null);
+
+      this.network.moveTo({
+        position: { x: 0, y: 0 },
+        scale: 0.45
+      });
     }
   }
 
