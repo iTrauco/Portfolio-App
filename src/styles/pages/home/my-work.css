@@ -63,3 +63,14 @@
 .MyWork .project-container {
   margin-top: 100px;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .MyWork .title {
+    font-size: 7vw;
+  }
+  .MyWork .title-ribbon {
+    width: 80vw;
+    height: 15vw;
+  }
+}
