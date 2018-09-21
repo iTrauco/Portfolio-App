@@ -147,6 +147,7 @@
   transition: 0.1s;
   box-shadow: 0px 0px #4355bd, 1px 1px #4355bd, 2px 2px #4355bd, 3px 3px #4355bd,
     4px 4px #4355bd, 5px 5px #4355bd;
+  white-space: nowrap;
 }
 .ContactMe .button i {
   margin-right: 0.3rem;
@@ -175,5 +176,39 @@
   }
   100% {
     opacity: 0.4;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 750px) {
+  .ContactMe .bar {
+    margin: 0px 35px;
+  }
+}
+@media (max-width: 640px) {
+  .ContactMe .contact-container {
+    flex-direction: column;
+  }
+  .ContactMe .bar {
+    width: 90%;
+    height: 1px;
+    margin: 20px 0px;
+    margin-top: 25px;
+  }
+  .ContactMe .button-container {
+    position: relative;
+    width: auto;
+    left: -4px;
+  }
+  .ContactMe .email {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 464px) {
+  .ContactMe .sub-text {
+    width: 100%;
   }
 }
