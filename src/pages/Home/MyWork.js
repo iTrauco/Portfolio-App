@@ -70,7 +70,7 @@ class MyWork extends Component {
  */
 var projects = [
   {
-    name: 'Gatorstep Configurator',
+    name: 'Gatorstep',
     link: 'http://gatorstep.quangostaging.com/configurator/',
     description: `
       Gatorstep is a quality flooring manufacturer. I was tasked with creating a 

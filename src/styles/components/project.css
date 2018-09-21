@@ -237,6 +237,11 @@
   .Project .name {
     font-size: 8vw;
   }
+  .Project .name .ribbon {
+    top: 10%;
+    transform: none;
+    max-height: 50px;
+  }
 }
 
 /* Go even wider! */
