@@ -244,4 +244,7 @@
   .MyTech .title {
     font-size: 8vw;
   }
+  .MyTech {
+    height: 950px;
+  }
 }

@@ -68,9 +68,25 @@
 @media (max-width: 768px) {
   .MyWork .title {
     font-size: 7vw;
+    margin-bottom: 0px;
   }
   .MyWork .title-ribbon {
     width: 80vw;
     height: 15vw;
+  }
+  .MyWork .content {
+    width: 100%;
+  }
+  .MyWork .project-container {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .MyWork .title {
+    font-size: 9vw;
+  }
+  .MyWork .title-ribbon {
+    width: 95vw;
+    height: 17vw;
   }
 }
