@@ -73,7 +73,7 @@ var projects = [
     name: 'Gatorstep Configurator',
     link: 'http://gatorstep.quangostaging.com/configurator/',
     description: `
-      Gatorstep is a quality flooring manufactorer. I was tasked with creating a 
+      Gatorstep is a quality flooring manufacturer. I was tasked with creating a 
       3d product viewer, allowing users to see the different color combinations,
       patterns, textures - All on a 3d boat model.
     
