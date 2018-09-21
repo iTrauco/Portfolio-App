@@ -229,6 +229,9 @@
 
 /* Widen the content closer to the edges of the screen */
 @media (max-width: 700px) {
+  .Project {
+    overflow-x: hidden;
+  }
   .Project .text-container,
   .Project .image-container {
     width: 80%;
