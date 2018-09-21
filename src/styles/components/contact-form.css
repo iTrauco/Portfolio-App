@@ -97,3 +97,23 @@
 .ContactForm .hidden {
   display: none;
 }
+
+/* Media Queries */
+@media (max-width: 670px) {
+  .ContactForm .window {
+    width: 100%;
+  }
+  .ContactForm .form-state {
+    padding: 25px 10px;
+  }
+  .ContactForm input,
+  .ContactForm textarea {
+    min-width: 90%;
+  }
+  .ContactForm .button {
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
