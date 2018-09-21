@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   margin: 125px 0px;
-  overflow-x: hidden;
 }
 .Project:nth-child(even) {
   flex-direction: row-reverse;
