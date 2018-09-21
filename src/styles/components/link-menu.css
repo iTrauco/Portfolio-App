@@ -14,9 +14,9 @@
 }
 .contact i {
   margin-right: 4px;
-  font-size: 25px;
+  font-size: 29px;
   transform: translateY(-1px);
-  padding: 13px 12px;
+  padding: 0px 8px;
   border-radius: 50%;
 }
 .contact .text {
@@ -83,5 +83,40 @@
   100% {
     opacity: 1;
     margin-left: 12px;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 650px) {
+  .LinkMenu .link-container {
+    flex-direction: column;
+  }
+  .LinkMenu .link {
+    margin: 8px 0px;
+    align-self: flex-end;
+    width: 35px;
+    height: 35px;
+    font-size: 39px;
+    text-align: center;
+  }
+  .LinkMenu .link:nth-child(2) {
+    position: relative;
+    left: 3px;
+  }
+  .LinkMenu .contact {
+    left: 15px;
+    bottom: 15px;
+    font-size: 39px;
+  }
+}
+@media (max-width: 464px) {
+  .LinkMenu .link-container {
+    right: 15px;
+    bottom: 15px;
+  }
+  .LinkMenu .link {
+    font-size: 35px;
+    width: 30px;
+    height: 30px;
   }
 }
