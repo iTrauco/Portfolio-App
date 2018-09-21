@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
 // Nodemailer
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport(
-  'smtps://gageprod@gmail.com:Grevias516@smtp.gmail.com'
+  'smtps://' + process.env.EMAIL + ':' + process.env.PASS + '@smtp.gmail.com'
 );
 
 // setup e-mail data with unicode symbols
