@@ -2,6 +2,7 @@ var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var nodemailer = require('nodemailer');
+var credentials = require('./email-credentials');
 
 server.listen(3001);
 // WARNING: app.listen(80) will NOT work here!
@@ -14,8 +15,10 @@ app.get('/', function(req, res) {
 // Nodemailer
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport(
-  'smtps://' + process.env.EMAIL + ':' + process.env.PASS + '@smtp.gmail.com'
+  'smtps://' + credentials.EMAIL + ':' + credentials.PASS + '@smtp.gmail.com'
 );
+
+console.log(credentials);
 
 // setup e-mail data with unicode symbols
 var mailOptions = {
