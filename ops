@@ -20,10 +20,21 @@ elif [ $script == "commitship" ] ; then
   git push origin master
   ./ops ship
 elif [ $script == "ship" ] ; then
-  echo "Building Static Webpage..."
-  npm run build
-  echo "Uploading './build' to Droplet..."
-  scp -prq ./build/. root@162.243.131.60:/usr/share/nginx/html/Portfolio-App
-  echo "Uploading './api' to Droplet"
-  scp -prq ./api/. root@162.243.131.60:/api
+
+  if [ $option == "api" ] ; then
+    echo "Uploading './api' to Droplet..."
+    scp -prq ./api/. root@162.243.131.60:/api
+  elif [ $option == "site" ] ; then 
+    echo "Building Static Webpage..."
+    npm run build
+    echo "Uploading './build' to Droplet..."
+    scp -prq ./build/. root@162.243.131.60:/usr/share/nginx/html/Portfolio-App
+  else
+    echo "Building Static Webpage..."
+    npm run build
+    echo "Uploading './build' to Droplet..."
+    scp -prq ./build/. root@162.243.131.60:/usr/share/nginx/html/Portfolio-App
+    echo "Uploading './api' to Droplet..."
+    scp -prq ./api/. root@162.243.131.60:/api
+  fi
 fi
