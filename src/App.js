@@ -8,8 +8,9 @@ import io from 'socket.io-client';
 class App extends Component {
   constructor(options) {
     super(options);
+    var apiAddress = process.env.API_ADDRESS || 'http://localhost:3001';
 
-    this.socket = io.connect('http://192.241.229.157:3001');
+    this.socket = io.connect(apiAddress);
     this.touchDevice = this.isTouchDevice();
   }
 
