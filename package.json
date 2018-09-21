@@ -2,7 +2,7 @@
   "name": "portfolio-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://quangogage.github.io/Portfolio-App",
+  "homepage": "http://162.243.131.60/",
   "dependencies": {
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
