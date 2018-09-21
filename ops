@@ -20,11 +20,6 @@ elif [ $script == "commitship" ] ; then
   git push origin master
   ./ops ship
 elif [ $script == "ship" ] ; then
-    echo "Shipping to production...";
-    ssh root@192.241.229.157 " \
-    cd Portfolio-App && \
-    git pull origin master"
-elif [ $script == "publish" ] ; then
   echo "Building..."
   npm run build
   echo "Copy-Pasting to Droplet..."
