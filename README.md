@@ -3,6 +3,8 @@ This is my portfolio website. It is a fairly simple one page react-app that show
 
 It is hosted on digital ocean - The static webpage is served by NGINX, and the API is ran by Docker.
 
+![Screenshot of Site](https://github.com/quangogage/Portfolio-App/blob/master/screenshots/1.png?raw=true)
+
 ## Setup
 1. Install Dependencies:  `npm install`
 2. Create email credentials:  
