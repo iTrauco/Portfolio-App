@@ -129,12 +129,10 @@ var projects = [
 
       <br /><br />
       
-      Overall, I would have to say the biggest takeaway from my time working on
-      this website has to be the use of canvas. The header has a canvas, there's a
-      canvas in the body of the page, and there's another canvas towards the bottom
-      in the "Contact Me" section. That is a lot for one page to handle, I've had to
-      take every step possible to optimize these canvases and maintain peak 
-      performance.
+      Overall the biggest takeaway from my time spent working on this site has to be
+      my newfound backend knowledge. I set up this static site to be served with
+      NGINX, and the API used to send emails from the contact form is being ran by
+      Docker.
     `,
     images: ['/portfolio/1.png']
   }
