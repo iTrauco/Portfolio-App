@@ -85,7 +85,8 @@ class Home extends Component {
   checkTypeShow() {
     if (
       localStorage.getItem('hasVisited') == 'true' ||
-      this.state.introComplete
+      this.state.introComplete ||
+      1 == 1 // Always return true (temp)
     ) {
       // Display the page
       this.state.showPage = true;
