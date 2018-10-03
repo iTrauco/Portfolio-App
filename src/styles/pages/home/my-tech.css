@@ -215,13 +215,13 @@
     top: 50px;
     transform: none;
     padding: 10px 5px;
-    width: 80%;
+    width: 90%;
     margin: auto;
   }
 
   .MyTech .sub-text {
     text-align: center;
-    width: 90%;
+    width: 95%;
     margin: auto;
     padding-bottom: 15px;
   }
@@ -229,7 +229,7 @@
   .MyTech .tech-list-container {
     position: relative;
     top: 100px;
-    width: 80%;
+    width: 85%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -238,6 +238,15 @@
   }
   .MyTech .item {
     font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .MyTech .sub-text {
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .MyTech .item {
+    font-weight: 600;
   }
 }
 @media (max-width: 580px) {

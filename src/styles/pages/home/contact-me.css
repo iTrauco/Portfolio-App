@@ -184,6 +184,9 @@
   .ContactMe .bar {
     margin: 0px 35px;
   }
+  .ContactMe .sub-text {
+    font-weight: 600;
+  }
 }
 @media (max-width: 640px) {
   .ContactMe .contact-container {

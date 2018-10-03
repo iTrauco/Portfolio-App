@@ -80,6 +80,9 @@
   .MyWork .project-container {
     margin-top: 20px;
   }
+  .MyWork .description {
+    font-weight: 600;
+  }
 }
 @media (max-width: 500px) {
   .MyWork .title {
