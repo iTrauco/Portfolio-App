@@ -72,7 +72,7 @@ class LinkMenu extends Component {
           .children('.name')
           .css('width', 0);
       });
-    }, 500);
+    }, 1000);
   }
 }
 
