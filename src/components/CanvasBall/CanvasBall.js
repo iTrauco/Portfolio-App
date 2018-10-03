@@ -18,7 +18,11 @@ export default class CanvasBall {
 
     this.c.canvas.width = this.container.width();
     this.c.canvas.height = this.container.height();
-    $(window).on('resize', this.handleResize.bind(this));
+
+    // Only adjust on desktop
+    if (!options.isTouchDevice) {
+      $(window).on('resize', this.handleResize.bind(this));
+    }
 
     this.balls = [];
     this.generateBalls();

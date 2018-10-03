@@ -42,7 +42,10 @@ class Home extends Component {
             <LinkMenu openContactForm={this.openContactForm.bind(this)} />
             <ContactForm ref={this.contactForm} socket={this.props.socket} />
             <Message ref={this.message} />
-            <HomeHeader isShown={this.state.showPage} />
+            <HomeHeader
+              isShown={this.state.showPage}
+              isTouchDevice={this.props.isTouchDevice}
+            />
             <HomeBody
               scrollY={this.state.scrollY}
               triggerMessage={this.triggerMessage.bind(this)}

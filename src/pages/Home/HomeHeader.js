@@ -15,7 +15,8 @@ class HomeHeader extends Component {
 
     new CanvasBall({
       canvas: $('.HomeHeader').children('.canvas-1'),
-      container: $('.HomeHeader')
+      container: $('.HomeHeader'),
+      isTouchDevice: this.props.isTouchDevice
     });
   }
   componentWillReceiveProps(newProps) {
