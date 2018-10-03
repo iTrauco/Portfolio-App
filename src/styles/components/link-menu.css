@@ -1,7 +1,7 @@
 /* The Contact Me Button */
 .LinkMenu .contact {
   position: fixed;
-  z-index: 9;
+  z-index: 100;
   font-family: Patua;
   font-size: 20px;
   color: white;
@@ -42,7 +42,7 @@
   bottom: 15px;
   right: 25px;
   display: flex;
-  z-index: 9;
+  z-index: 100;
   font-size: 40px;
 }
 
