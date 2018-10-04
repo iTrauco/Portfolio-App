@@ -89,7 +89,7 @@ var projects = [
       testing, and breaking everything - But eventually I found a reliable pipeline.
       
     `,
-    images: ['/gatorstep/1.png']
+    images: ['/gatorstep/1.jpg']
   },
   {
     name: 'Canby Ed Foundation',
@@ -111,7 +111,7 @@ var projects = [
       form</a> on the site. Which, in making it, helped me learn a lot about
       Wordpress & SMTP.
     `,
-    images: ['/canby-ed-foundation/1.png', '/canby-ed-foundation/2.png']
+    images: ['/canby-ed-foundation/1.jpg', '/canby-ed-foundation/2.jpg']
   },
   {
     name: 'My Portfolio',
@@ -134,7 +134,7 @@ var projects = [
       NGINX, and the API used to send emails from the contact form is being ran by
       Docker.
     `,
-    images: ['/portfolio/1.png']
+    images: ['/portfolio/1.jpg']
   }
 ];
 
