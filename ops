@@ -22,19 +22,42 @@ elif [ $script == "commitship" ] ; then
 elif [ $script == "ship" ] ; then
 
   if [ $option == "api" ] ; then
+
     echo "Uploading './api' to Droplet..."
     scp -prq ./api/. root@162.243.131.60:/api
+    echo "Api Uploaded!"
+
+    echo "Restarting Docker..."
+    ssh root@162.243.131.60 "cd ../api && docker-compose down && docker-compose up -d"
+    echo "API Successfully Shipped!"
+
   elif [ $option == "site" ] ; then 
+
     echo "Building Static Webpage..."
     npm run build
+    echo "Build Complete"
+
     echo "Uploading './build' to Droplet..."
     scp -prq ./build/. root@162.243.131.60:/usr/share/nginx/html/Portfolio-App
+    echo "Website Succesfully Shipped!"
+
   else
+
     echo "Building Static Webpage..."
     npm run build
+    echo "Build Complete"
+
     echo "Uploading './build' to Droplet..."
     scp -prq ./build/. root@162.243.131.60:/usr/share/nginx/html/Portfolio-App
+    echo "Website Succesfully Shipped!"
+
     echo "Uploading './api' to Droplet..."
     scp -prq ./api/. root@162.243.131.60:/api
+    echo "API Successfully Shipped!"
+
+    echo "Restarting Docker..."
+    ssh root@162.243.131.60 "cd ../api && docker-compose down && docker-compose up -d"
+    echo "API Successfully Shipped!"
+
   fi
 fi
